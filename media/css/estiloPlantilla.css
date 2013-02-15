@@ -1,0 +1,65 @@
+body{
+    font-family: 'Lato', 'Calibri','Arial', sans-serif;
+    color: grey;
+}m
+
+.input, .textarea{
+    padding: 10px 15px;
+    background: white;
+    color: #606060;
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    overflow: auto;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.submit{
+    width: 76px;
+    margin: 21px 0px;
+    padding: 10px 14px;
+    color: #CBCBCB;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.9);
+    background: -webkit-gradient(linear, left top, left bottom, from(#656464), to(#303030));
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 21px;
+    line-height: 21px;
+    font-family: 'Lato', 'Calibri','Arial', sans-serif;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+
+#titulo{
+    background: url("../img/page-title.png") center bottom no-repeat;
+    background-size: 70%;
+}
+
+#titulo, #contenidoPrincipal{;
+                             padding-bottom: 20px;
+                             margin: 10px 10px 30px 10px;
+}
+
+#contenidoPrincipal{
+    margin-top: 60px;
+}
+
+#titulo h1,h2{
+    display: inline;
+}
+
+#titulo span{
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#contenedorGral{
+    background: url("../img/wrapper-bg.png") no-repeat top;
+    margin-top: 10px;
+}
+
+.isocial{
+    float: right;
+    margin: 30px 10px 10px 10px;
+}

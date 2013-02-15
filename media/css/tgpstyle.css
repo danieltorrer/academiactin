@@ -1,0 +1,58 @@
+.p {
+  line-height: 150%;
+  font-family: 'Arvo', Georgia, Times, serif;
+  font-size: 2em;
+}
+.nom {
+  font-size: 1.2em;
+}
+.button {
+  border: 1px solid #006;
+  background: #FFFFFF;
+  text-align: center;
+}
+.cuaddesb {
+  height: 20px;
+  width: 20px;
+  background-color: #04DF00;
+}
+.cuadfunc {
+  height: 20px;
+  width: 20px;
+  background-color: #1712E5;
+}
+.cuadambi {
+  height: 20px;
+  width: 20px;
+  background-color: #9817E4;
+}
+.cuaddisf {
+  height: 20px;
+  width: 20px;
+  background-color: #F26F13;
+}
+.cuadbloq {
+  height: 20px;
+  width: 20px;
+  background-color: #E71010;
+}
+.desbloqueado {
+  color: #04DF00;
+  font-size: 1.2em;
+}
+.funcional {
+  color: #1712E5;
+  font-size: 1.2em;
+}
+.ambivalencia {
+  color: #9817E4;
+  font-size: 1.2em;
+}
+.disfuncional {
+  color: #F26F13;
+  font-size: 1.2em;
+}
+.bloqueado {
+  color: ;
+  font-size: 1.2em;
+}

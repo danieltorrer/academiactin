@@ -1,0 +1,67 @@
+.caract {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2em;
+}
+.centro-i {
+  font-family: 'Ubuntu', sans-serif;
+  color: #2F9C41;
+  font-size: 1.2em;
+}
+.centro-r {
+  font-family: 'Ubuntu', sans-serif;
+  color: #3F3ACB;
+  font-size: 1.2em;
+}
+.centro-e {
+  font-family: 'Ubuntu', sans-serif;
+  color: #D51A1A;
+  font-size: 1.2em;
+}
+.desc-c {
+  text-align: center;
+}
+.desc-e {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: justify;
+  font-size: 1.2em;
+}
+.nombre-e {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.3em;
+}
+.reformador {
+  color: #F17C1E;
+}
+.ayudador {
+  color: #2EC828;
+}
+.triunfador {
+  color: #184E1E;
+}
+.individualista {
+  color: #42A139;
+}
+.investigador {
+  color: #75C57C;
+}
+.leal {
+  color: #181433;
+}
+.entusiasta {
+  color: #A13D82;
+}
+.desafiador {
+  color: #893763;
+}
+.pacificador {
+  color: #E41F1F;
+}
+.num-e {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2em;
+  font-size: 1.3em;
+  text-align: center;
+}

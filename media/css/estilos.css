@@ -1,0 +1,58 @@
+/*Estilos Base Footer*/
+.foot{
+    background-color: #808080;
+}
+
+/*Estilos Eneagrama */
+
+.arrastrable { 
+    width: 20px; 
+    height: 20px; 
+    padding: 0.5em; 
+    z-index: 20;
+    background-color:#00ff00; }
+
+.dropped {
+    width:20px; 
+    height: 20px; 
+    padding: 0.5em; 
+    background-color: #800040 
+    }
+
+.boton {
+    text-align: center;
+    height: 20px; 
+    padding: 0.5em; 
+    background-color: #008080;
+    color:#FFFFFF; }
+
+#contenedor_palab {
+    height: 400px;
+    margin:0 auto;
+    padding:0;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    box-shadow: 0 1px 1px #cccccc;
+}
+
+#generador_palab {
+    height: 400px;
+    margin:0 auto;
+    padding:0;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    box-shadow: 0 1px 1px #cccccc;
+}
+
+.dropped{
+    height: 20px;
+    width:20px;
+    padding: 0.5em;
+    box-shadow: 0 1px 1px #cccccc;
+    background-color: #800080;
+
+}
