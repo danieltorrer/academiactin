@@ -8,8 +8,8 @@ class Login extends CI_Model {
 
     public function getLogin($email, $password) {
         $data = array(
-            'Email' => $email,
-            'Password' => $password
+            'Correo' => $email,
+            'Pass' => $password
         );
 
         $query = $this->db->get_where('Usuarios', $data);
