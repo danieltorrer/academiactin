@@ -1,0 +1,12 @@
+<?php
+
+class Usuario extends CI_Model {
+
+    public function __construct() {
+        
+    }
+
+    
+}
+
+?>

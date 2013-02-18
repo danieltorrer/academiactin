@@ -144,6 +144,7 @@ body {
     padding: 0;
     position: absolute;
     width: 1px;
+    color: white !important;
 }
 #nav .block {
     z-index: 2;
@@ -194,6 +195,7 @@ body {
     line-height: 1.2em;
     text-align: center;
     white-space: nowrap;
+    color: white !important;
 }
 #top .nav-btn {
     position: absolute;

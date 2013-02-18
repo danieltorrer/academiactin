@@ -12,7 +12,7 @@ $this->load->view("header");
                 <div class="block">
                     <div class="container">
                         <div class="row">
-                            <h1 class="block-title">Book Title</h1>
+                            <h1 class="block-title">Academia CTIN</h1>
                             <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
                         </div>
                     </div>
@@ -47,9 +47,8 @@ $this->load->view("header");
                 <div class="container">
                     <div class="row">
                         <div class="six centered columns">
-                            <?php echo form_open('academia'); ?>  
-
-                            <fieldset>  
+                            <?php echo form_open('academia/login'); ?>  
+                            <fieldset>
                                 <legend>Inicia Sesión</legend>
                                 <label for="error">Correo electrónico:</label>
                                 <input type="text" placeholder="correo@host.com" name="email">
@@ -58,10 +57,8 @@ $this->load->view("header");
                                 <input type="password" name="pass">
                                 <small id="errorp" style="color:red"><?php echo form_error('pass'); ?></small>
                                 <input type="submit" class="button secondary radius" value="Iniciar Sesión">
-                            </fieldset>  
-
+                            </fieldset>
                             <? echo form_close(); ?>
-
                         </div>
                     </div>
                 </div>
