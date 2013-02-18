@@ -56,12 +56,12 @@ $this->load->view("header");
                                     <label>Nombre</label>  
                                     <input type="text" placeholder="Nombre" id="Nombre" name="Nombre" onkeypress="return letras(event)" required>  
                                     <small id="error1" style="color:red"><?php echo form_error('Nombre'); ?></small>
-                                    <!--<label>Apellido Paterno</label>
+                                    <label>Apellido Paterno</label>
                                     <input type="text" placeholder="Apellido Paterno" id="AP" name="AP" onkeypress="return letras(event)" required>
 
                                     <label>Apellido Materno</label>
                                     <input type="text" placeholder="Apellido Materno" id="AM" name="AM" onkeypress="return letras(event)" required>
-                                    -->
+
 
                                     <label>Fecha de Nacimiento</label>	
                                     <input type="date" id="FN" name="FN" onblur="calc(this)" onchange="calc(this)" required>
@@ -146,14 +146,7 @@ $this->load->view("header");
                                     <label>Celular</label>
                                     <input type="text" name="cel" id="cel" placeholder="Celular a 10 dígitos" onkeypress="return numeros(event)" maxlength=10>
                                     <small id="error7" style="color:red"><?php echo form_error('cel'); ?></small>
-                                    <!--<label>E-Mail</label>
-                                    <input type="mail" name="mail" id="mail" placeholder="ejemplo@dominio.com" onkeypress="return mail(event)" required>
-                                    <br></br>
-                                    <label>Contraseña</label>  
-                                    <input type="password" name="pass1" id="pass1" placeholder="Password" required>
-                                    <label>Confirma Contraseña</label>  
-                                    <input type="password" name="pass2" id="pass2" placeholder="Password" required>
-                                    -->
+
                                     <label><h5>Conocimientos</h5></label>
                                     <label>¿Haz desarrollado aplicaciones móviles?</label>
                                     <label for="sm">  
