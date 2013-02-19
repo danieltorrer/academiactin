@@ -31,8 +31,7 @@ class Academia extends CI_Controller {
             if ($cons) {
                 $sesion_data = array(
                     'id' => $cons[0]['Id_Usuario'],
-                    "activo" => $cons[0]["Activo"],
-                    'tipo' => $cons[0]['Tipo_Usuario']
+                    "activo" => $cons[0]["Activo"]
                 );
 
                 $this->session->set_userdata($sesion_data);
