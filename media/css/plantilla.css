@@ -485,3 +485,7 @@ ul.baraja-cont li {
     left: 90%;
     z-index: 999;
 }
+
+.bar{
+  display: none;
+}

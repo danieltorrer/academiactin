@@ -6,8 +6,13 @@ if (!defined('BASEPATH'))
 class Academia extends CI_Controller {
 
     public function index() {
-        if ($this->isValidated())
-            redirect("academia/registro");
+        if ($this->isValidated()){
+            if ($this->session->userdata['tipo'] == 0) {
+                redirect("academia/registro");
+            }
+            else
+                $this->load->view("plantilla_view");
+        }
         else
             redirect("academia/login");
 //agregar si ya lleno registro redireccionar a dashboard
@@ -27,12 +32,16 @@ class Academia extends CI_Controller {
             if ($cons) {
                 $sesion_data = array(
                     'id' => $cons[0]['Id_Usuario'],
+                    'tipo'=> $cons[0]['Tipo_Usuario']
                 );
 
                 $this->session->set_userdata($sesion_data);
                 $data['id'] = $this->session->userdata['id'];
-                redirect("academia/registro");
-//$this->load->view('registro_view');
+                if ($cons[0]['Tipo_Usuario'] == 0) {
+                    redirect("academia/registro");
+                }
+                else
+                    $this->load->view("plantilla_view");
             } else {
                 $this->load->view('login_view');
             }
@@ -44,8 +53,10 @@ class Academia extends CI_Controller {
     }
 
     public function registrar() {
-        $this->load->model('usuario');
+        $this->load->model('usuarios');
         $this->form_validation->set_rules('Nombre', 'Nombre', 'required');
+        $this->form_validation->set_rules('AP', 'Apellpat', 'required');
+        $this->form_validation->set_rules('AM', 'Apellmat', 'required');
         $this->form_validation->set_rules('FN', 'Fecha de Nacimiento', 'required');
         $this->form_validation->set_rules('nac', 'Nacionalidad', 'required');
         $this->form_validation->set_rules('gen', 'Genero', 'required');
@@ -60,9 +71,14 @@ class Academia extends CI_Controller {
         $this->form_validation->set_rules('ctin', 'Como te enteraste', 'required');
         $this->form_validation->set_rules('porque', 'Porque', 'required');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('dashboard_view');
+            $this->load->view('registro_view');
         } else {
-            
+            $update = $this->usuarios->registro($_POST['Nombre'],$_POST['AP'],$_POST['AM'],$_POST['FN'],$_POST['EDAD'],$_POST['est'],$_POST['nac'],$_POST['gen'],$_POST['dir'],$_POST['tel'],$_POST['cel'],$_POST['mov'],$_POST['web'],$_POST['cd'],$_POST['ultproy'],$_POST['ctin'],$_POST['porque']);
+            if (isset($update)) {
+                $this->load->view('plantilla_view');
+            }
+            else
+                $this->load->view('registro_view');
         }
     }
 
@@ -81,9 +97,9 @@ class Academia extends CI_Controller {
     }
 
     public function salir() {
-        $this->load->model('login_model');
-        $this->login_model->salir();
-        $this->load->view('login');
+        $this->load->model('login');
+        $this->login->salir();
+        $this->load->view('login_view');
     }
 
     public function isValidated() {
