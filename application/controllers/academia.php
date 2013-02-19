@@ -6,7 +6,6 @@ if (!defined('BASEPATH'))
 class Academia extends CI_Controller {
 
     public function index() {
-<<<<<<< HEAD
         if ($this->isValidated()) {
             if ($this->session->userdata['activo'] == 1) {
                 redirect("academia/dashboard");
@@ -14,19 +13,8 @@ class Academia extends CI_Controller {
                 redirect("academia/registro");
             }
         } else {
-=======
-        if ($this->isValidated()){
-            if ($this->session->userdata['tipo'] == 0) {
-                redirect("academia/registro");
-            }
-            else
-                $this->load->view("plantilla_view");
-        }
-        else
->>>>>>> origin/pastor
             redirect("academia/login");
         }
-//agregar si ya lleno registro redireccionar a dashboard
     }
 
     public function login() {
@@ -43,11 +31,8 @@ class Academia extends CI_Controller {
             if ($cons) {
                 $sesion_data = array(
                     'id' => $cons[0]['Id_Usuario'],
-<<<<<<< HEAD
-                    "activo" => $cons[0]["Activo"]
-=======
-                    'tipo'=> $cons[0]['Tipo_Usuario']
->>>>>>> origin/pastor
+                    "activo" => $cons[0]["Activo"],
+                    'tipo' => $cons[0]['Tipo_Usuario']
                 );
 
                 $this->session->set_userdata($sesion_data);
@@ -88,7 +73,7 @@ class Academia extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('registro_view');
         } else {
-            $update = $this->usuarios->registro($_POST['Nombre'],$_POST['AP'],$_POST['AM'],$_POST['FN'],$_POST['EDAD'],$_POST['est'],$_POST['nac'],$_POST['gen'],$_POST['dir'],$_POST['tel'],$_POST['cel'],$_POST['mov'],$_POST['web'],$_POST['cd'],$_POST['ultproy'],$_POST['ctin'],$_POST['porque']);
+            $update = $this->usuarios->registro($_POST['Nombre'], $_POST['AP'], $_POST['AM'], $_POST['FN'], $_POST['EDAD'], $_POST['est'], $_POST['nac'], $_POST['gen'], $_POST['dir'], $_POST['tel'], $_POST['cel'], $_POST['mov'], $_POST['web'], $_POST['cd'], $_POST['ultproy'], $_POST['ctin'], $_POST['porque']);
             if (isset($update)) {
                 $this->load->view('plantilla_view');
             }
@@ -112,11 +97,8 @@ class Academia extends CI_Controller {
     public function salir() {
         $this->load->model('login');
         $this->login->salir();
-<<<<<<< HEAD
         redirect("academia/index");
-=======
         $this->load->view('login_view');
->>>>>>> origin/pastor
     }
 
     public function isValidated() {
