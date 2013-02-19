@@ -105,7 +105,7 @@ $this->load->view("header");
                             <div class="twelve columns">
                                 <div class="mosaic-block cover four columns">
                                     <div class="mosaic-overlay"><img src="<?= base_url() ?>media/img/enea.png"/></div>
-                                    <a href="<?=base_url()?>academia/cartas" class="mosaic-backdrop">
+                                    <a href="<?= base_url() ?>academia/cartas" class="mosaic-backdrop">
                                         <div class="details">
                                             <h4>Eneagrama</h4>
                                         </div>

@@ -26,21 +26,21 @@ class Academia extends CI_Controller {
             $this->load->view('login_view');
         } else {
 
-            $cons = $this->login->getLogin($_POST['email'], sha1($_POST['pass']));
+            $cons = $this->login->getLogin($this->security->xss_clean($this->input->post('email')), sha1($this->security->xss_clean($this->input->post('pass'))));
 
             if ($cons) {
                 $sesion_data = array(
                     'id' => $cons[0]['Id_Usuario'],
                     "activo" => $cons[0]["Activo"]
                 );
-
+                //redirect("academia/index");
                 $this->session->set_userdata($sesion_data);
                 $data['id'] = $this->session->userdata['id'];
-                if ($cons[0]['Tipo_Usuario'] == 0) {
+                if ($cons[0]['Activo'] == 0) {
                     redirect("academia/registro");
                 }
                 else
-                    $this->load->view("plantilla_view");
+                    redirect("academia/dashboard");
             } else {
                 $this->load->view('login_view');
             }
@@ -53,6 +53,7 @@ class Academia extends CI_Controller {
 
     public function registrar() {
         $this->load->model('usuarios');
+
         $this->form_validation->set_rules('Nombre', 'Nombre', 'required');
         $this->form_validation->set_rules('AP', 'Apellpat', 'required');
         $this->form_validation->set_rules('AM', 'Apellmat', 'required');
@@ -69,12 +70,16 @@ class Academia extends CI_Controller {
         $this->form_validation->set_rules('ultproy', 'Ultimo proyecto', 'required');
         $this->form_validation->set_rules('ctin', 'Como te enteraste', 'required');
         $this->form_validation->set_rules('porque', 'Porque', 'required');
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('registro_view');
         } else {
-            $update = $this->usuarios->registro($_POST['Nombre'], $_POST['AP'], $_POST['AM'], $_POST['FN'], $_POST['EDAD'], $_POST['est'], $_POST['nac'], $_POST['gen'], $_POST['dir'], $_POST['tel'], $_POST['cel'], $_POST['mov'], $_POST['web'], $_POST['cd'], $_POST['ultproy'], $_POST['ctin'], $_POST['porque']);
+            $update = $this->usuarios->registro
+                    ($this->security->xss_clean($this->input->post('Nombre')), $this->security->xss_clean($this->input->post('AP')), $this->security->xss_clean($this->input->post('AM')), $this->security->xss_clean($this->input->post('FN')), $this->security->xss_clean($this->input->post('EDAD')), $this->security->xss_clean($this->input->post('est')), $this->security->xss_clean($this->input->post('nac')), $this->security->xss_clean($this->input->post('gen')), $this->security->xss_clean($this->input->post('dir')), $this->security->xss_clean($this->input->post('tel')), $this->security->xss_clean($this->input->post('cel')), $this->security->xss_clean($this->input->post('mov')), $this->security->xss_clean($this->input->post('web')), $this->security->xss_clean($this->input->post('cd')), $this->security->xss_clean($this->input->post('ultproy')), $this->security->xss_clean($this->input->post('ctin')), $this->security->xss_clean($this->input->post('porque'))
+            );
             if (isset($update)) {
-                $this->load->view('plantilla_view');
+                $this->session->set_userdata('activo', 1);
+                redirect("academia/dashboard");
             }
             else
                 $this->load->view('registro_view');
@@ -98,6 +103,37 @@ class Academia extends CI_Controller {
         $this->login->salir();
         redirect("academia/index");
         $this->load->view('login_view');
+    }
+
+    public function eneagrama() {
+        $this->load->model("usuarios");
+
+        //contar
+
+        $cartas = $this->security->xss_clean($this->input->post(enearesult));
+        $numeros = array();
+        for ($i = 1; $i < 10; $i++) {
+            $numeros[$i] = substr_count($cartas, $i);
+        }
+
+        //obtener mayor
+
+        $mayor = 0;
+        for ($i = 1; $i < 10; $i++) {
+            $mayor = $numeros[$i] > $mayor ? $numeros[$i] : $mayor;
+        }
+
+        //comprobar mayor
+        $mayores = array();
+        $cont= 0;
+        for ($i = 1; $i < 10; $i++) {
+            if($numeros[$i] == $mayor)
+                $mayores[$cont] = $i;
+                
+        }
+
+
+        $consulta = $this->usuario->evaluar($mayor);
     }
 
     public function isValidated() {

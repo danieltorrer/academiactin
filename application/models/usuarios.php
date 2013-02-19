@@ -6,9 +6,9 @@ class Usuarios extends CI_Model {
         
     }
 
-    public function registro($nom,$pat,$mat,$fech,$edad,$lug,$nac,$gen,$dir,$tel,$cel,$mov,$web,$dig,$ult,$como,$por){
+    public function registro($nom, $pat, $mat, $fech, $edad, $lug, $nac, $gen, $dir, $tel, $cel, $mov, $web, $dig, $ult, $como, $por) {
         $data = array(
-            'Nombre' => 'madre',
+            'Nombre' => $nom,
             'Ap_Mat' => $mat,
             'Ap_Pat' => $pat,
             'Fecha_Nac' => $fech,
@@ -24,14 +24,22 @@ class Usuarios extends CI_Model {
             'Co_Dig' => $dig,
             'Ult_Proy' => $ult,
             'Co_Ent' => $como,
-            'Po_Que' => $por
-            );
-        
-        $query = $this->db->update('Usuarios',$data,array('Id_Usuario'=>3));
+            'Po_Que' => $por,
+            "Activo" => 1
+        );
+
+        $query = $this->db->update('Usuarios', $data, array('Id_Usuario' => $this->session->userdata['id']));
         return true;
     }
-
     
+    public function evaluar($numero){
+        //$cartas = explode(",", $numero)
+        
+        $query = $this->db->get_where('Eneatipos', array("Id_Eneagrama" => $numero));
+        return $query->result_array();
+        
+        
+    }
 
 }
 

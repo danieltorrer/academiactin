@@ -48,52 +48,57 @@ $this->load->view("header");
 
             <div id="main" role="main">
                 <div class="container">
-                     <div class="row">
-                            <div class="nine columns">
-                                <?php
-                                $sec = 1;
-                                $cont = 0;
-                                while ($sec < 19) {
-                                    echo "
-                                            <div class='baraja bar' id='b{$sec}'>
+                    <div class="row">
+                        <div class="nine columns">
+                            <?php
+                            $sec = 1;
+                            $cont = 0;
+                            while ($sec < 19) {
+                                echo "
+                                           <div class='baraja bar' id='b{$sec}'>
                                                 <ul id='baraja-el{$sec}' class='baraja-cont'>
-                                                    <li value='{$tarjetas[++$cont]['id']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['id']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['id']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['id']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['id']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
                                                 </ul>
                                             </div>
                                         ";
-                                    $sec++;
-                                }
-                                ?>
-                            </div>
-                            <div class="one columns">
-                                <a class="button" id="siguiente">»</a>
-                            </div>
-                            <div class="one columns"></div>
+                                $sec++;
+                            }
+                            ?>
                         </div>
-                        <div class="row">
-                            <div class="twelve columns">
-                                <div id="drop">
-                                    <img id="paloma" src="<?=base_url()?>media/img/paloma.jpg">
-                                </div>
+                        <div class="one columns">
+                            <a class="button" id="siguiente">»</a>
+                        </div>
+                        <div class="one columns"></div>
+                    </div>
+                    <div class="row">
+                        <div class="twelve columns">
+                            <div id="drop">
+                                <img id="paloma" src="<?= base_url() ?>media/img/paloma.jpg">
                             </div>
                         </div>
+                    </div>
+                    <?php
+                    $atributos = array('id' => 'eneagramaform');
+                    ?>
+                    <?php echo form_open('academia/eneagrama', $atributos); ?>
+                        <input type="hidden" name="enearesult" id="eneresult">
+                    <?php echo form_close() ?>
                 </div>
             </div>
 
             <!--Footer -->
             <footer role="contentinfo">
-                <div class="block container">
+                <!--<div class="block container">
                     <div class="row">
                         <div class="twelve columns">
                             <p class="small">Copyright © <a href="http://dbushell.com/">David Bushell</a></p>
                         </div>
                     </div>
-
-                </div>
+                </div>-->
             </footer>
 
         </div>
