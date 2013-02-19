@@ -72,7 +72,7 @@ $this->load->view("header");
                                     <small id="error2" style="color:red" class="errormsj"><?php echo form_error('FN'); ?></small>
 
                                     <label>Edad</label>
-                                    <input type="number" id="EDAD" name="EDAD" min=20 max=50 onkeypress="return numeros(event)" oninput="maxLengthCheck(this)" maxlength="2" disabled="true" required>
+                                    <input type="number" id="EDAD" name="EDAD" min=20 max=50 onkeypress="return numeros(event)" oninput="maxLengthCheck(this)" maxlength="2"  required>
 
 
                                     <label>Estado de Nacimiento</label>
@@ -223,8 +223,8 @@ $this->load->view("header");
 
     <script src="<?= base_url() ?>media/js/jquery.js"></script>
     <script src="<?= base_url() ?>media/js/main.js"></script>
+    <script src="<?= base_url() ?>media/js/jquery.validate.js"></script>
     <script src="<?= base_url() ?>media/js/valid.js"></script>
-    <script src="<?= base_url() ?>media/js/script"></script>
 
 </body>
 </html>

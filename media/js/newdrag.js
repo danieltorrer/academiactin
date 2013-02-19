@@ -53,6 +53,20 @@ $(function() {
     }
 	
     var b1 = iniciarB(1);
+    b1.fan({
+        speed:500,
+        easing: 'ease-out',
+        range: 20,
+        direction: 'left',
+        origin : {
+            x : 25, 
+            y : 100
+        },
+        translation : 300,
+        center : true,
+        scatter : false
+    });
+
     iniciarD(1);
 
     $("#siguiente").click(function(){
@@ -60,6 +74,19 @@ $(function() {
         aux++;
         $("#b"+aux).show();
         b2 = iniciarB(aux);
+        b2.fan({
+            speed:500,
+            easing: 'ease-out',
+            range: 20,
+            direction: 'left',
+            origin : {
+                x : 25, 
+                y : 100
+            },
+            translation : 300,
+            center : true,
+            scatter : false
+        });
         iniciarD(aux);
     });
 

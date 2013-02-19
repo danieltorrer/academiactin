@@ -49,7 +49,7 @@ $this->load->view("header");
             <div id="main" role="main">
                 <div class="container">
                      <div class="row">
-                            <div class="ten columns">
+                            <div class="nine columns">
                                 <?php
                                 $sec = 1;
                                 $cont = 0;
@@ -70,9 +70,16 @@ $this->load->view("header");
                                 ?>
                             </div>
                             <div class="one columns">
-                                <a class="button" id="siguiente">Siguiente »</a>
+                                <a class="button" id="siguiente">»</a>
                             </div>
                             <div class="one columns"></div>
+                        </div>
+                        <div class="row">
+                            <div class="twelve columns">
+                                <div id="drop">
+                                    <img id="paloma" src="<?=base_url()?>media/img/paloma.jpg">
+                                </div>
+                            </div>
                         </div>
                 </div>
             </div>
