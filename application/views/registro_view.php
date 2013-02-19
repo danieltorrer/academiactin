@@ -39,6 +39,10 @@ $this->load->view("header");
                         --><li>
                             <a href="#">Seccion 5</a>
                         </li>
+                        <br><br><br>
+                        <li>
+                            <a href="<?= base_url() ?>academia/salir">Cerrar sesión</a>
+                        </li>
                     </ul>
                     <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
                 </div>

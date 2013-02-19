@@ -6,10 +6,15 @@ if (!defined('BASEPATH'))
 class Academia extends CI_Controller {
 
     public function index() {
-        if ($this->isValidated())
-            redirect("academia/registro");
-        else
+        if ($this->isValidated()) {
+            if ($this->session->userdata['activo'] == 1) {
+                redirect("academia/dashboard");
+            } else {
+                redirect("academia/registro");
+            }
+        } else {
             redirect("academia/login");
+        }
 //agregar si ya lleno registro redireccionar a dashboard
     }
 
@@ -27,6 +32,7 @@ class Academia extends CI_Controller {
             if ($cons) {
                 $sesion_data = array(
                     'id' => $cons[0]['Id_Usuario'],
+                    "activo" => $cons[0]["Activo"]
                 );
 
                 $this->session->set_userdata($sesion_data);
@@ -67,7 +73,7 @@ class Academia extends CI_Controller {
     }
 
     public function dashboard() {
-        
+        $this->load->view("dashboard_view");
     }
 
     public function cartas() {
@@ -75,15 +81,13 @@ class Academia extends CI_Controller {
         $this->load->model('tarjetas');
         $tarjetas = $this->tarjetas->getTarjetas();
         $data['tarjetas'] = $tarjetas;
-
-
         $this->load->view("card_view", $data, $tarjetas);
     }
 
     public function salir() {
-        $this->load->model('login_model');
-        $this->login_model->salir();
-        $this->load->view('login');
+        $this->load->model('login');
+        $this->login->salir();
+        redirect("academia/index");
     }
 
     public function isValidated() {
