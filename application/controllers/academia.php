@@ -129,7 +129,7 @@ class Academia extends CI_Controller {
 
         //comprobar mayor
         $mayores = array();
-        $cont = 0;
+        $cont = 0;  //cuantos se encontraron
         for ($i = 1; $i < 10; $i++) {
             if ($numeros[$i] == $mayor) {
                 $mayores[$cont] = $i;
@@ -139,17 +139,19 @@ class Academia extends CI_Controller {
 
         //hay $cont repetidos
         if (count($mayores) > 1) {
+            
             //borrar cartas repetidas
         } else {
             //insertar numero de eneagrama a usuario
             $this->usuarios->seteneatipo($mayor);
             redirect("academia/index");
-            //array('Id_Usuario' => $this->session->userdata['id'])
+            
         }
 
         $consulta = $this->usuarios->evaluar($mayor);
         //$consulta = $this->usuario->evaluar($mayor);
     }
+   
 
     public function isValidated() {
         return isset($this->session->userdata['id']);
