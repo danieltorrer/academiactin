@@ -31,14 +31,20 @@ class Usuarios extends CI_Model {
         $query = $this->db->update('Usuarios', $data, array('Id_Usuario' => $this->session->userdata['id']));
         return true;
     }
-    
-    public function evaluar($numero){
+
+    public function evaluar($numero) {
         //$cartas = explode(",", $numero)
-        
+
         $query = $this->db->get_where('Eneatipos', array("Id_Eneagrama" => $numero));
         return $query->result_array();
-        
-        
+    }
+
+    public function seteneatipo($numero) {
+        $data = array(
+            "eneatipo" => $numero
+        );
+
+        $this->db->update('Usuarios', $data, array('Id_Usuario' => $this->session->userdata['id']));
     }
 
 }

@@ -15,8 +15,8 @@ $this->load->view("header");
                 <div class="block">
                     <div class="container">
                         <div class="row">
-                            <h1 class="block-title">Book Title</h1>
-                            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+                            <h1 class="block-title">Academia CTIN</h1>
+                            <a class="nav-btn" id="nav-open-btn" href="#nav">Navegacion</a>
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,11 @@ $this->load->view("header");
                                 echo "
                                            <div class='baraja bar' id='b{$sec}'>
                                                 <ul id='baraja-el{$sec}' class='baraja-cont'>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
                                                 </ul>
                                             </div>
                                         ";
@@ -87,7 +87,9 @@ $this->load->view("header");
                     $atributos = array('id' => 'eneagramaform');
                     ?>
                     <?php echo form_open('academia/eneagrama', $atributos); ?>
-                        <input type="hidden" name="enearesult" id="eneresult">
+                    <input type="hidden" name="enearesult" id="eneresult">
+                    <input type="hidden" name="enenombres" id="enenombres">
+                    <input type="hidden" name="eneid" id="eneid">
                     <?php echo form_close() ?>
                 </div>
             </div>

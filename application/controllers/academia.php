@@ -107,13 +107,17 @@ class Academia extends CI_Controller {
 
     public function eneagrama() {
         $this->load->model("usuarios");
-
         //contar
 
         $cartas = $this->security->xss_clean($this->input->post("enearesult"));
+        $eneatipos = $this->security->xss_clean($this->input->post("enearesult"));
+        $nombres = $this->security->xss_clean($this->input->post("enenombres"));
+        $idcartas = $this->security->xss_clean($this->input->post("eneid"));
+
+
         $numeros = array();
         for ($i = 1; $i < 10; $i++) {
-            $numeros[$i] = substr_count($cartas, $i);
+            $numeros[$i] = substr_count($eneatipos, $i);
         }
 
         //obtener mayor
@@ -125,15 +129,26 @@ class Academia extends CI_Controller {
 
         //comprobar mayor
         $mayores = array();
-        $cont= 0;
+        $cont = 0;
         for ($i = 1; $i < 10; $i++) {
-            if($numeros[$i] == $mayor)
+            if ($numeros[$i] == $mayor) {
                 $mayores[$cont] = $i;
-                
+                $cont++;
+            }
         }
 
+        //hay $cont repetidos
+        if (count($mayores) > 1) {
+            //borrar cartas repetidas
+        } else {
+            //insertar numero de eneagrama a usuario
+            $this->usuarios->seteneatipo($mayor);
+            redirect("academia/index");
+            //array('Id_Usuario' => $this->session->userdata['id'])
+        }
 
         $consulta = $this->usuarios->evaluar($mayor);
+        //$consulta = $this->usuario->evaluar($mayor);
     }
 
     public function isValidated() {
