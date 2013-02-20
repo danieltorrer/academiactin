@@ -108,27 +108,29 @@ class Academia extends CI_Controller {
     public function eneagrama() {
         $this->load->model("usuarios");
         //contar
-
-        $cartas = $this->security->xss_clean($this->input->post("enearesult"));
         $eneatipos = $this->security->xss_clean($this->input->post("enearesult"));
         $nombres = $this->security->xss_clean($this->input->post("enenombres"));
         $idcartas = $this->security->xss_clean($this->input->post("eneid"));
 
+        $eneatiposarray = explode(",", $eneatipos);
+        $nombresarray = explode(",", $nombres);
+        $idcartasarray = explode(",", $idcartas);
 
         $numeros = array();
         for ($i = 1; $i < 10; $i++) {
             $numeros[$i] = substr_count($eneatipos, $i);
         }
 
-        //obtener mayor
+        //obtener eneatipo con mas ocurrencias (mayor)
 
         $mayor = 0;
         for ($i = 1; $i < 10; $i++) {
             $mayor = $numeros[$i] > $mayor ? $numeros[$i] : $mayor;
         }
 
-        //comprobar mayor
-        $mayores = array();
+        //comprobar mayor//
+
+        $mayores = array(); //cuales se encontraron
         $cont = 0;  //cuantos se encontraron
         for ($i = 1; $i < 10; $i++) {
             if ($numeros[$i] == $mayor) {
@@ -139,23 +141,36 @@ class Academia extends CI_Controller {
 
         //hay $cont repetidos
         if (count($mayores) > 1) {
-            
-            //borrar cartas repetidas
+            $sustituir = array(); //se guardaran las cartas
+            $cuenta = 0;
+
+            //obtener las eneatipos, ids y nombres de los numeros que tienen mas
+            for ($i = 1; $i < 10; $i++) {
+                for ($j = 0; $j < $cont; $j++) {
+                    if ($eneatiposarray[$i] == $mayores[$j]) {
+                        $sustituir[$cuenta]["numero"] = $eneatiposarray[$i];
+                        $sustituir[$cuenta]["nombre"] = $nombresarray[$i];
+                        $sustituir[$cuenta]["id"] = $idcartasarray[$i];
+                        $cuenta++;
+                    }
+                }
+            }
+            $datos = array("resultado" => $sustituir);
+            $this->load->view("borrarcartas_view.php", $datos);
         } else {
             //insertar numero de eneagrama a usuario
             $this->usuarios->seteneatipo($mayor);
             redirect("academia/index");
-            
         }
 
         $consulta = $this->usuarios->evaluar($mayor);
         //$consulta = $this->usuario->evaluar($mayor);
     }
-   
 
     public function isValidated() {
         return isset($this->session->userdata['id']);
     }
+
 }
 
 ?>
