@@ -118,8 +118,10 @@ $(function() {
     });
 
     $("#paloma").click(function(){
+        $("#eneresult").val(enea)
+        $("#eneagramaform").submit();
+        //alert(enea);
         
-        alert(enea);
     });
 
 
