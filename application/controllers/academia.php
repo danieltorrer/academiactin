@@ -154,11 +154,6 @@ class Academia extends CI_Controller {
     public function isValidated() {
         return isset($this->session->userdata['id']);
     }
-
-    public function biblioteca(){
-        
-    }
-
 }
 
 ?>
