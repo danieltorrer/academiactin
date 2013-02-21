@@ -4,7 +4,13 @@ $this->load->view("header");
 <script src="<?= base_url() ?>media/js/modernizr.js"></script>
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>media/css/plantilla.css">
 <link rel="stylesheet" href="<?= base_url() ?>media/css/foundation.min.css">
+
+<script src="<?= base_url() ?>media/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/media/js/jquery.js"></script>
+
+
 </head>
+
 <body>
     <div id="outer-wrap">
         <div id="inner-wrap">
@@ -50,7 +56,8 @@ $this->load->view("header");
 
                 <div id="main" role="main">
                     <div class="container">
-
+                        
+                        
                     </div>
                 </div>
             </div>

@@ -17,9 +17,10 @@ class Tarjetas extends CI_Model {
             $tarjetas[$aux]['color'] = $fila['Color'];
             $tarjetas[$aux]['tipo'] = $fila['Eneatipo'];
         }
-
         return $tarjetas;
     }
+    
+    
 
 }
 
