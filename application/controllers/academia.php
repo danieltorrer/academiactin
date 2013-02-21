@@ -74,8 +74,7 @@ class Academia extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('registro_view');
         } else {
-            $update = $this->usuarios->registro
-                    ($this->security->xss_clean($this->input->post('Nombre')), $this->security->xss_clean($this->input->post('AP')), $this->security->xss_clean($this->input->post('AM')), $this->security->xss_clean($this->input->post('FN')), $this->security->xss_clean($this->input->post('EDAD')), $this->security->xss_clean($this->input->post('est')), $this->security->xss_clean($this->input->post('nac')), $this->security->xss_clean($this->input->post('gen')), $this->security->xss_clean($this->input->post('dir')), $this->security->xss_clean($this->input->post('tel')), $this->security->xss_clean($this->input->post('cel')), $this->security->xss_clean($this->input->post('mov')), $this->security->xss_clean($this->input->post('web')), $this->security->xss_clean($this->input->post('cd')), $this->security->xss_clean($this->input->post('ultproy')), $this->security->xss_clean($this->input->post('ctin')), $this->security->xss_clean($this->input->post('porque'))
+            $update = $this->usuarios->registro($this->security->xss_clean($this->input->post('Nombre')), $this->security->xss_clean($this->input->post('AP')), $this->security->xss_clean($this->input->post('AM')), $this->security->xss_clean($this->input->post('FN')), $this->security->xss_clean($this->input->post('EDAD')), $this->security->xss_clean($this->input->post('est')), $this->security->xss_clean($this->input->post('nac')), $this->security->xss_clean($this->input->post('gen')), $this->security->xss_clean($this->input->post('dir')), $this->security->xss_clean($this->input->post('tel')), $this->security->xss_clean($this->input->post('cel')), $this->security->xss_clean($this->input->post('mov')), $this->security->xss_clean($this->input->post('web')), $this->security->xss_clean($this->input->post('cd')), $this->security->xss_clean($this->input->post('ultproy')), $this->security->xss_clean($this->input->post('ctin')), $this->security->xss_clean($this->input->post('porque'))
             );
             if (isset($update)) {
                 $this->session->set_userdata('activo', 1);
@@ -124,9 +123,14 @@ class Academia extends CI_Controller {
         //obtener eneatipo con mas ocurrencias (mayor)
 
         $mayor = 0;
+        $eneatipo = 0;
         for ($i = 1; $i < 10; $i++) {
-            $mayor = $numeros[$i] > $mayor ? $numeros[$i] : $mayor;
+            if ($numeros[$i] > $mayor) {
+                $mayor = $numeros[$i];
+                $eneatipo = $i;
+            }
         }
+
 
         //comprobar mayor//
 
@@ -159,7 +163,7 @@ class Academia extends CI_Controller {
             $this->load->view("borrarcartas_view.php", $datos);
         } else {
             //insertar numero de eneagrama a usuario
-            $this->usuarios->seteneatipo($mayor);
+            $this->usuarios->seteneatipo($eneatipo);
             redirect("academia/index");
         }
 
