@@ -51,6 +51,25 @@ $this->load->view("header");
                 <div id="main" role="main">
                     <div class="container">
 
+                        <?php
+                        //
+                        //var_dump($resultado);
+                        for ($i = 0; $i < count($resultado); $i++) {
+
+                            if ($i % 4 == 0) {
+                                echo '<div class="row">';
+                            }
+
+                            echo '<div class="three columns" data-nombre="' . $resultado[$i]["id"] . '" data-id="' . $resultado[$i]["nombre"] . '" data-numero="' . $resultado[$i]["numero"] . '">';
+                            echo "<h6>" . $resultado[$i]["id"] . "</h6>";
+                            echo "</div>";
+
+
+                            if ($i % 4 == 3) {
+                                echo ' </div>';
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

@@ -6,11 +6,15 @@ if (!defined('BASEPATH'))
 class Academia extends CI_Controller {
 
     public function index() {
-        if ($this->isValidated())
-            redirect("academia/registro");
-        else
+        if ($this->isValidated()) {
+            if ($this->session->userdata['activo'] == 1) {
+                redirect("academia/dashboard");
+            } else {
+                redirect("academia/registro");
+            }
+        } else {
             redirect("academia/login");
-//agregar si ya lleno registro redireccionar a dashboard
+        }
     }
 
     public function login() {
@@ -22,17 +26,21 @@ class Academia extends CI_Controller {
             $this->load->view('login_view');
         } else {
 
-            $cons = $this->login->getLogin($_POST['email'], sha1($_POST['pass']));
+            $cons = $this->login->getLogin($this->security->xss_clean($this->input->post('email')), sha1($this->security->xss_clean($this->input->post('pass'))));
 
             if ($cons) {
                 $sesion_data = array(
                     'id' => $cons[0]['Id_Usuario'],
+                    "activo" => $cons[0]["Activo"]
                 );
-
+                //redirect("academia/index");
                 $this->session->set_userdata($sesion_data);
                 $data['id'] = $this->session->userdata['id'];
-                redirect("academia/registro");
-//$this->load->view('registro_view');
+                if ($cons[0]['Activo'] == 0) {
+                    redirect("academia/registro");
+                }
+                else
+                    redirect("academia/dashboard");
             } else {
                 $this->load->view('login_view');
             }
@@ -44,8 +52,11 @@ class Academia extends CI_Controller {
     }
 
     public function registrar() {
-        $this->load->model('usuario');
+        $this->load->model('usuarios');
+
         $this->form_validation->set_rules('Nombre', 'Nombre', 'required');
+        $this->form_validation->set_rules('AP', 'Apellpat', 'required');
+        $this->form_validation->set_rules('AM', 'Apellmat', 'required');
         $this->form_validation->set_rules('FN', 'Fecha de Nacimiento', 'required');
         $this->form_validation->set_rules('nac', 'Nacionalidad', 'required');
         $this->form_validation->set_rules('gen', 'Genero', 'required');
@@ -59,15 +70,23 @@ class Academia extends CI_Controller {
         $this->form_validation->set_rules('ultproy', 'Ultimo proyecto', 'required');
         $this->form_validation->set_rules('ctin', 'Como te enteraste', 'required');
         $this->form_validation->set_rules('porque', 'Porque', 'required');
+
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('dashboard_view');
+            $this->load->view('registro_view');
         } else {
-            
+            $update = $this->usuarios->registro($this->security->xss_clean($this->input->post('Nombre')), $this->security->xss_clean($this->input->post('AP')), $this->security->xss_clean($this->input->post('AM')), $this->security->xss_clean($this->input->post('FN')), $this->security->xss_clean($this->input->post('EDAD')), $this->security->xss_clean($this->input->post('est')), $this->security->xss_clean($this->input->post('nac')), $this->security->xss_clean($this->input->post('gen')), $this->security->xss_clean($this->input->post('dir')), $this->security->xss_clean($this->input->post('tel')), $this->security->xss_clean($this->input->post('cel')), $this->security->xss_clean($this->input->post('mov')), $this->security->xss_clean($this->input->post('web')), $this->security->xss_clean($this->input->post('cd')), $this->security->xss_clean($this->input->post('ultproy')), $this->security->xss_clean($this->input->post('ctin')), $this->security->xss_clean($this->input->post('porque'))
+            );
+            if (isset($update)) {
+                $this->session->set_userdata('activo', 1);
+                redirect("academia/dashboard");
+            }
+            else
+                $this->load->view('registro_view');
         }
     }
 
     public function dashboard() {
-        
+        $this->load->view("dashboard_view");
     }
 
     public function cartas() {
@@ -75,15 +94,81 @@ class Academia extends CI_Controller {
         $this->load->model('tarjetas');
         $tarjetas = $this->tarjetas->getTarjetas();
         $data['tarjetas'] = $tarjetas;
-
-
         $this->load->view("card_view", $data, $tarjetas);
     }
 
     public function salir() {
-        $this->load->model('login_model');
-        $this->login_model->salir();
-        $this->load->view('login');
+        $this->load->model('login');
+        $this->login->salir();
+        redirect("academia/index");
+        $this->load->view('login_view');
+    }
+
+    public function eneagrama() {
+        $this->load->model("usuarios");
+        //contar
+        $eneatipos = $this->security->xss_clean($this->input->post("enearesult"));
+        $nombres = $this->security->xss_clean($this->input->post("enenombres"));
+        $idcartas = $this->security->xss_clean($this->input->post("eneid"));
+
+        $eneatiposarray = explode(",", $eneatipos);
+        $nombresarray = explode(",", $nombres);
+        $idcartasarray = explode(",", $idcartas);
+
+        $numeros = array();
+        for ($i = 1; $i < 10; $i++) {
+            $numeros[$i] = substr_count($eneatipos, $i);
+        }
+
+        //obtener eneatipo con mas ocurrencias (mayor)
+
+        $mayor = 0;
+        $eneatipo = 0;
+        for ($i = 1; $i < 10; $i++) {
+            if ($numeros[$i] > $mayor) {
+                $mayor = $numeros[$i];
+                $eneatipo = $i;
+            }
+        }
+
+
+        //comprobar mayor//
+
+        $mayores = array(); //cuales se encontraron
+        $cont = 0;  //cuantos se encontraron
+        for ($i = 1; $i < 10; $i++) {
+            if ($numeros[$i] == $mayor) {
+                $mayores[$cont] = $i;
+                $cont++;
+            }
+        }
+
+        //hay $cont repetidos
+        if (count($mayores) > 1) {
+            $sustituir = array(); //se guardaran las cartas
+            $cuenta = 0;
+
+            //obtener las eneatipos, ids y nombres de los numeros que tienen mas
+            for ($i = 1; $i < 10; $i++) {
+                for ($j = 0; $j < $cont; $j++) {
+                    if ($eneatiposarray[$i] == $mayores[$j]) {
+                        $sustituir[$cuenta]["numero"] = $eneatiposarray[$i];
+                        $sustituir[$cuenta]["nombre"] = $nombresarray[$i];
+                        $sustituir[$cuenta]["id"] = $idcartasarray[$i];
+                        $cuenta++;
+                    }
+                }
+            }
+            $datos = array("resultado" => $sustituir);
+            $this->load->view("borrarcartas_view.php", $datos);
+        } else {
+            //insertar numero de eneagrama a usuario
+            $this->usuarios->seteneatipo($eneatipo);
+            redirect("academia/index");
+        }
+
+        $consulta = $this->usuarios->evaluar($mayor);
+        //$consulta = $this->usuario->evaluar($mayor);
     }
 
     public function isValidated() {
