@@ -164,7 +164,7 @@ class Academia extends CI_Controller {
         } else {
             //insertar numero de eneagrama a usuario
             $this->usuarios->seteneatipo($eneatipo);
-            redirect("academia/index");
+            redirect("academia/mostrareneatipo");
         }
 
         $consulta = $this->usuarios->evaluar($mayor);
@@ -173,6 +173,17 @@ class Academia extends CI_Controller {
 
     public function isValidated() {
         return isset($this->session->userdata['id']);
+    }
+
+    public function mostrareneatipo() {
+        $this->load->model("usuarios");
+        $eneatipo["resul"] = $this->usuarios->obtenereneatipo();
+        //$this->load->view("welcome_message",$eneatipo);
+        
+        $this->load->model("eneatipo");
+        $data["eneatipo"] = $this->eneatipo->obtenEneatipo($eneatipo["resul"][0]["eneatipo"]);
+        
+        $this->load->view("eneatipo_view",$data);
     }
 
 }

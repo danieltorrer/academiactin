@@ -2,8 +2,8 @@
 $this->load->view("header");
 ?>
 <?php
-    $eene = array("Reformador","Ayudador","Triunfador","Individualista","Investigador","Leal","Entusiasta","Desafiador","Pacificador");
-    $tip = array("Emocional","Intuitivo","Racional")
+$eene = array("Reformador", "Ayudador", "Triunfador", "Individualista", "Investigador", "Leal", "Entusiasta", "Desafiador", "Pacificador");
+$tip = array("Emocional", "Intuitivo", "Racional")
 ?>
 <script src="<?= base_url() ?>media/js/modernizr.js"></script>
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>media/css/plantilla.css">
@@ -71,72 +71,72 @@ $this->load->view("header");
 
             <div id="main" role="main">
                 <div class="container" id="eneatipos">
-                        <div class="row" >
-                            <div class="Three columns">
-                               <h1> Eneatipo <?= $eneatipo['Id_Eneagrama'].": ".$eneatipo['Nombre'] ?></h1>
-                            </div>
+                    <div class="row" >
+                        <div class="Three columns">
+                            <h1> Eneatipo <?= $eneatipo['Id_Eneagrama'] . ": " . $eneatipo['Nombre'] ?></h1>
                         </div>
-                        <div class="row">
-                            <div class="four columns offset-by-one">
-                                <h4><?= $tip[$eneatipo['Centro']-1] ?></h4>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="four columns offset-by-one">
+                            <h4><?= $tip[$eneatipo['Centro'] - 1] ?></h4>
                         </div>
-                        <div class="row">
-                            <div class="four columns offset-by-one">
-                                <h4>Estres: <?= $eene[$eneatipo['Est']-1] ?></h4>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="four columns offset-by-one">
+                            <h4>Estres: <?= $eene[$eneatipo['Est'] - 1] ?></h4>
                         </div>
-                        <div class="row">
-                            <div class="four columns offset-by-one">
-                                <h4>Seguridad: <?= $eene[$eneatipo['Seg']-1] ?></h4>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="four columns offset-by-one">
+                            <h4>Seguridad: <?= $eene[$eneatipo['Seg'] - 1] ?></h4>
                         </div>
-                        <div class="row">
-                            <div class="ten columns centered des">
-                                <?= $eneatipo['Desc_Corta'] ?>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="ten columns centered des">
+                            <?= $eneatipo['Desc_Corta'] ?>
                         </div>
-                        <div class="row">
-                            <div class="four columns centered">
-                                <table class="twelve">
-                                    <tbody>
-                                        <tr>
-                                            <td>Pasión</td>
-                                            <td><?= $eneatipo['Pasion'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Fijación</td>
-                                            <td><?= $eneatipo['Fijacion'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trampa</td>
-                                            <td><?= $eneatipo['Trampa'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Función</td>
-                                            <td><?= $eneatipo['Funcion'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Visión</td>
-                                            <td><?= $eneatipo['Vision'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Temor</td>
-                                            <td><?= $eneatipo['Temor'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Deseo</td>
-                                            <td><?= $eneatipo['Deseo'] ?></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="four columns centered">
+                            <table class="twelve">
+                                <tbody>
+                                    <tr>
+                                        <td>Pasión</td>
+                                        <td><?= $eneatipo['Pasion'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fijación</td>
+                                        <td><?= $eneatipo['Fijacion'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trampa</td>
+                                        <td><?= $eneatipo['Trampa'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Función</td>
+                                        <td><?= $eneatipo['Funcion'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Visión</td>
+                                        <td><?= $eneatipo['Vision'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Temor</td>
+                                        <td><?= $eneatipo['Temor'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deseo</td>
+                                        <td><?= $eneatipo['Deseo'] ?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="row">
-                            <div class="ten columns centered des">
-                                <?= $eneatipo['Desc'] ?>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="ten columns centered des">
+                            <?= $eneatipo['Desc'] ?>
                         </div>
+                    </div>
                 </div>
             </div>
 
