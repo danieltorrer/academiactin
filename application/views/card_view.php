@@ -4,6 +4,8 @@ $this->load->view("header");
 <script src="<?= base_url() ?>media/js/modernizr.js"></script>
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>media/css/plantilla.css">
 <link rel="stylesheet" href="<?= base_url() ?>media/css/foundation.min.css">
+<link rel="stylesheet" href="<?= base_url() ?>media/css/cartas.css">
+
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 </head>
@@ -48,12 +50,13 @@ $this->load->view("header");
 
             <div id="main" role="main">
                 <div class="container">
-                     <div class="row">
-                            <div class="nine columns">
-                                <?php
-                                $sec = 1;
-                                $cont = 0;
-                                while ($sec < 19) {
+                    <div class="row">
+                        <div class="two columns"></div>
+                        <div class="nine columns">
+                            <?php
+                            $sec = 1;
+                            $cont = 0;
+                            while ($sec < 19) {
                                 echo "
                                            <div class='baraja bar' id='b{$sec}'>
                                                 <ul id='baraja-el{$sec}' class='baraja-cont'>
@@ -65,20 +68,20 @@ $this->load->view("header");
                                                 </ul>
                                             </div>
                                         ";
-                                    $sec++;
-                                }
-                                ?>
-                            </div>
-                        <div class="one columns">
-                            <a class="button" id="siguiente">»</a>
+                                $sec++;
+                            }
+                            ?>
                         </div>
-                        <div class="one columns"></div>
+                        <div class="one columns">
+                            <a class="button" id="siguiente">Mas cartas</a>
+                        </div>
+                        
                     </div>
                     <div class="row">
                         <div class="row">
                             <div class="twelve columns">
                                 <div id="drop">
-                                    <img id="paloma" src="<?=base_url()?>media/img/paloma.jpg">
+                                    <img id="paloma" src="<?= base_url() ?>media/img/paloma.jpg">
                                 </div>
                             </div>
                         </div>

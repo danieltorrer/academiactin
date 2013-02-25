@@ -47,6 +47,12 @@ class Usuarios extends CI_Model {
         $this->db->update('Usuarios', $data, array('Id_Usuario' => $this->session->userdata['id']));
     }
 
+    public function obtenereneatipo() {
+        $this->db->select("eneatipo")->from("Usuarios")->where("Id_Usuario" , $this->session->userdata['id']);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
 }
 
 ?>
