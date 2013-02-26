@@ -176,12 +176,10 @@ class Academia extends CI_Controller {
     }
 
     public function mostrareneatipo() {
-        $this->load->model("usuarios");
-        $eneatipo["resul"] = $this->usuarios->obtenereneatipo();
-        //$this->load->view("welcome_message",$eneatipo);
         
         $this->load->model("eneatipo");
-        $data["eneatipo"] = $this->eneatipo->obtenEneatipo($eneatipo["resul"][0]["eneatipo"]);
+        $uen=$this->eneatipo->userenea();
+        $data["eneatipo"]=$this->eneatipo->get_eneatipo($uen['uen']);
         
         $this->load->view("eneatipo_view",$data);
     }

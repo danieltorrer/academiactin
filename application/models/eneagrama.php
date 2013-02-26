@@ -1,24 +1,21 @@
 <?php
 
-class Eneatipo extends CI_Model {
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-    /*function __construct() {
-        $this->load->database();
-    }*/
+/**
+ * Description of login_model
+ *
+ * @author America Movil
+ */
+class eneagrama extends CI_Model {
 
-    function userenea(){
-        $this->db->where('Id_Usuario', $this->session->userdata['id']);
-        $query = $this->db->get('Usuarios');
-        $row = $query->row();
-        $data = array(
-            'uen' => $row->eneatipo
-        );
-        return($data);
+    public function get_tarjetas() {
+        $query = $this->db->get('c2_usuarios');
+        return $query;
     }
-
-
-
-
     public function get_eneatipo($id){
         $this->db->where("Id_Eneagrama",$id);
         $query=$this->db->get("Eneatipos");
@@ -43,8 +40,6 @@ class Eneatipo extends CI_Model {
         );
         return $data;
     }
-    
-    
 
 }
 
