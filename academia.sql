@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-02-2013 a las 17:19:03
+-- Tiempo de generación: 25-02-2013 a las 22:52:15
 -- Versión del servidor: 5.1.44
 -- Versión de PHP: 5.3.1
 
@@ -316,6 +316,8 @@ CREATE TABLE IF NOT EXISTS `Usuarios` (
   `Ult_Proy` text COLLATE utf8_spanish2_ci NOT NULL,
   `Co_Ent` text COLLATE utf8_spanish2_ci NOT NULL,
   `Po_Que` text COLLATE utf8_spanish2_ci NOT NULL,
+  `Activo` int(11) NOT NULL DEFAULT '0',
+  `eneatipo` int(11) NOT NULL,
   PRIMARY KEY (`Id_Usuario`),
   UNIQUE KEY `Correo` (`Correo`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=2 ;
@@ -324,5 +326,5 @@ CREATE TABLE IF NOT EXISTS `Usuarios` (
 -- Volcar la base de datos para la tabla `Usuarios`
 --
 
-INSERT INTO `Usuarios` (`Id_Usuario`, `Nombre`, `Ap_Mat`, `Ap_Pat`, `Fecha_Nac`, `Edad`, `Lu_Nac`, `Nac`, `Gen`, `Direccion`, `Tel_Casa`, `Cel`, `Correo`, `Pass`, `Con_1`, `Con_2`, `Con_3`, `Con_4`, `Con_5`, `Movil`, `Web`, `Co_Dig`, `Ult_Proy`, `Co_Ent`, `Po_Que`) VALUES
-(1, 'Pastor', 'Lozano', 'del Montte', '2002-04-27', 11, 'Cuba', 1, 1, 'Cubaland', '55555555', '55555555', 'pastor@gmail.com', 'pastor', 1, 1, 1, 1, 1, 555555, 1, 1, 'asdfasdf', 'asdfasfd', 'asdfasfd');
+INSERT INTO `Usuarios` (`Id_Usuario`, `Nombre`, `Ap_Mat`, `Ap_Pat`, `Fecha_Nac`, `Edad`, `Lu_Nac`, `Nac`, `Gen`, `Direccion`, `Tel_Casa`, `Cel`, `Correo`, `Pass`, `Con_1`, `Con_2`, `Con_3`, `Con_4`, `Con_5`, `Movil`, `Web`, `Co_Dig`, `Ult_Proy`, `Co_Ent`, `Po_Que`, `Activo`, `eneatipo`) VALUES
+(1, 'Daniel', 'Hernandez', 'Torres', '1991-02-15', 22, 'Distrito Federal', 0, 0, 'Cerrada 30 norte', '2961409', '0442223278', 'pastor@gmail.com', 'f1e835a09c639c510bb61774f376dee994b7abd9', 1, 1, 1, 1, 1, 1, 1, 1, 'NADA', 'NADA', 'NADA', 1, 2);
