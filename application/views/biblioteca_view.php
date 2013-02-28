@@ -35,20 +35,35 @@ $this->load->view("header");
                 <div class="block">
                     <h2 class="block-title">Dashboard</h2>
                     <ul>
+                        <li>
+                            <h6><a href="<?= base_url() ?>academia">Dashboard</a></h6>
+                        </li><!--
+                        -->
+                        <li>
+                            <a href="<?= base_url() ?>">Introduccion</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url() ?>academia/cartas">Eneagrama</a>
+                        </li><!--
+                        -->
+                        <li>
+                            <a href="<?= base_url() ?>academia/gestalt">Prueba gestalt</a>
+                        </li>
+
+
+                        <li>
+                            <a href="<?= base_url() ?>biblioteca">Anticurriculum</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url() ?>biblioteca">Disciplinas</a>
+                        </li>
                         <li class="is-active">
-                            <a href="#">Seccion 1</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 2</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 3</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 4</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 5</a>
+                            <a href="<?= base_url() ?>biblioteca">Base de conocimientos</a>
+                        </li>
+
+                        <br><br><br>
+                        <li>
+                            <a href="<?= base_url() ?>academia/salir">Cerrar sesión</a>
                         </li>
                     </ul>
                     <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
@@ -57,58 +72,58 @@ $this->load->view("header");
 
             <div id="main" role="main">
                 <div class="container" id="eneatipos">
-                        <div class="row" >
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/2">Eneatipo 2</a>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/3">Eneatipo 3</a>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/4">Eneatipo 4</a>
-                                </div>
+                    <div class="row" >
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a>
                             </div>
                         </div>
-                        <div class="row" >
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/5">Eneatipo 5</a>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/6">Eneatipo 6</a>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/7">Eneatipo 7</a>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/8">Eneatipo 8</a>
-                                </div>
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/2">Eneatipo 2</a>
                             </div>
                         </div>
-                        <div class="row" >
-                            <div class="three columns">
-                                <div class="enea">
-                                    <a href="<?= base_url() ?>biblioteca/eneatipo/9">Eneatipo 9</a>
-                                </div>
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/3">Eneatipo 3</a>
                             </div>
-                            <div class="nine columns"></div>
                         </div>
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/4">Eneatipo 4</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/5">Eneatipo 5</a>
+                            </div>
+                        </div>
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/6">Eneatipo 6</a>
+                            </div>
+                        </div>
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/7">Eneatipo 7</a>
+                            </div>
+                        </div>
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/8">Eneatipo 8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="three columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/9">Eneatipo 9</a>
+                            </div>
+                        </div>
+                        <div class="nine columns"></div>
+                    </div>
                 </div>
             </div>
 

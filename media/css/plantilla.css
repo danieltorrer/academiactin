@@ -204,7 +204,8 @@ body {
 }
 
 #main {
-    background: #fff;  
+    background: #fff;
+    margin-bottom: 40px;
 }
 
 #main .block {
@@ -490,5 +491,5 @@ ul.baraja-cont li {
 }
 
 .bar{
-  display: none;
+    display: none;
 }

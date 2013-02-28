@@ -25,20 +25,31 @@ $this->load->view("header");
                         <h2 class="block-title">Dashboard</h2>
                         <ul>
                             <li class="is-active">
-                                <a href="#">Seccion 1</a>
+                                <h6><a href="<?= base_url() ?>academia">Dashboard</a></h6>
                             </li><!--
-                            --><li>
-                                <a href="#">Seccion 2</a>
-                            </li><!--
-                            --><li>
-                                <a href="#">Seccion 3</a>
-                            </li><!--
-                            --><li>
-                                <a href="#">Seccion 4</a>
-                            </li><!--
-                            --><li>
-                                <a href="#">Seccion 5</a>
+                            -->
+                            <li>
+                                <a href="<?= base_url() ?>">Introduccion</a>
                             </li>
+                            <li>
+                                <a href="<?= base_url() ?>academia/cartas">Eneagrama</a>
+                            </li><!--
+                            -->
+                            <li>
+                                <a href="<?= base_url() ?>academia/gestalt">Prueba gestalt</a>
+                            </li>
+
+
+                            <li>
+                                <a href="<?= base_url() ?>biblioteca">Anticurriculum</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url() ?>biblioteca">Disciplinas</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url() ?>biblioteca">Base de conocimientos</a>
+                            </li>
+
                             <br><br><br>
                             <li>
                                 <a href="<?= base_url() ?>academia/salir">Cerrar sesión</a>

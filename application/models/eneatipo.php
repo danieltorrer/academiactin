@@ -1,11 +1,21 @@
 <?php
 
 class Eneatipo extends CI_Model {
+    /* function __construct() {
+      $this->load->database();
+      } */
 
-    /*function __construct() {
-        $this->load->database();
-    }*/
+    function userenea() {
+        $this->db->where('Id_Usuario', $this->session->userdata['id']);
+        $query = $this->db->get('Usuarios');
+        $row = $query->row();
+        $data = array(
+            'uen' => $row->eneatipo
+        );
+        return($data);
+    }
 
+<<<<<<< HEAD
     function userenea(){
         $this->db->where('Id_Usuario', $this->session->userdata['id']);
         $query = $this->db->get('Usuarios');
@@ -24,6 +34,13 @@ class Eneatipo extends CI_Model {
         $query=$this->db->get("Eneatipos");
         $row=$query->row();        
         $data = array(
+=======
+    public function get_eneatipo($id) {
+        $this->db->where("Id_Eneagrama", $id);
+        $query = $this->db->get("Eneatipos");
+        $row = $query->row();
+        $data = array(
+>>>>>>> Me mame
             'ide' => $row->Id_Eneagrama,
             'inomb' => $row->Nombre,
             'idescc' => $row->Desc_Corta,
@@ -35,16 +52,21 @@ class Eneatipo extends CI_Model {
             'item' => $row->Temor,
             'ides' => $row->Deseo,
             'itra' => $row->Trampa,
+<<<<<<< HEAD
             'idescr'=>$row->Descript,
             'iest'=>$row->Est,
             'iseg'=>$row->Seg,
             'ifun'=>$row->Funcion
 
+=======
+            'idescr' => $row->Descript,
+            'iest' => $row->Est,
+            'iseg' => $row->Seg,
+            'ifun' => $row->Funcion
+>>>>>>> Me mame
         );
         return $data;
     }
-    
-    
 
 }
 

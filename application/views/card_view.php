@@ -17,7 +17,7 @@ $this->load->view("header");
                 <div class="block">
                     <div class="container">
                         <div class="row">
-                            <h1 class="block-title">Academia CTIN</h1>
+                            <h1 class="block-title">Eneagrama</h1>
                             <a class="nav-btn" id="nav-open-btn" href="#nav">Navegacion</a>
                         </div>
                     </div>
@@ -26,22 +26,36 @@ $this->load->view("header");
 
             <nav id="nav" role="navigation">
                 <div class="block">
-                    <h2 class="block-title">Dashboard</h2>
                     <ul>
+                        <li>
+                            <h6><a href="<?= base_url() ?>academia">Dashboard</a></h6>
+                        </li><!--
+                        -->
+                        <li>
+                            <a href="<?= base_url() ?>">Introduccion</a>
+                        </li>
                         <li class="is-active">
-                            <a href="#">Seccion 1</a>
+                            <a href="<?= base_url() ?>academia/cartas">Eneagrama</a>
                         </li><!--
-                        --><li>
-                            <a href="#">Seccion 2</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 3</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 4</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 5</a>
+                        -->
+                        <li>
+                            <a href="<?= base_url() ?>academia/gestalt">Prueba gestalt</a>
+                        </li>
+
+
+                        <li>
+                            <a href="<?= base_url() ?>biblioteca">Anticurriculum</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url() ?>biblioteca">Disciplinas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url() ?>biblioteca">Base de conocimientos</a>
+                        </li>
+
+                        <br><br><br>
+                        <li>
+                            <a href="<?= base_url() ?>academia/salir">Cerrar sesión</a>
                         </li>
                     </ul>
                     <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
@@ -75,7 +89,7 @@ $this->load->view("header");
                         <div class="one columns">
                             <a class="button" id="siguiente">Mas cartas</a>
                         </div>
-                        
+
                     </div>
                     <div class="row">
                         <div class="row">
