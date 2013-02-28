@@ -51,17 +51,17 @@
     var doc = document.documentElement;
 
     var transform_prop = window.Modernizr.prefixed('transform'),
-        transition_prop = window.Modernizr.prefixed('transition'),
-        transition_end = (function() {
-            var props = {
-                'WebkitTransition' : 'webkitTransitionEnd',
-                'MozTransition'    : 'transitionend',
-                'OTransition'      : 'oTransitionEnd otransitionend',
-                'msTransition'     : 'MSTransitionEnd',
-                'transition'       : 'transitionend'
-            };
-            return props.hasOwnProperty(transition_prop) ? props[transition_prop] : false;
-        })();
+    transition_prop = window.Modernizr.prefixed('transition'),
+    transition_end = (function() {
+        var props = {
+            'WebkitTransition' : 'webkitTransitionEnd',
+            'MozTransition'    : 'transitionend',
+            'OTransition'      : 'oTransitionEnd otransitionend',
+            'msTransition'     : 'MSTransitionEnd',
+            'transition'       : 'transitionend'
+        };
+        return props.hasOwnProperty(transition_prop) ? props[transition_prop] : false;
+    })();
 
     window.App = (function()
     {
@@ -70,9 +70,9 @@
 
         var inner = document.getElementById('inner-wrap'),
 
-            nav_open = false,
+        nav_open = false,
 
-            nav_class = 'js-nav';
+        nav_class = 'js-nav';
 
 
         app.init = function()
@@ -152,5 +152,22 @@
     if (window.addEventListener) {
         window.addEventListener('DOMContentLoaded', window.App.init, false);
     }
+    
+    
+    
+    //$(document).ready(function(){
+        tamano()
+        $(window).resize(tamano)
+    //})
+
+    
+
+    
 
 })(window, window.document);
+
+function tamano(){
+        var largo = document.documentElement.clientHeight
+        console.log(largo)
+        $("#main").css("min-height", largo)
+    }

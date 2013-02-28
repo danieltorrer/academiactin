@@ -25,9 +25,6 @@ $tip = array("Emocional", "Intuitivo", "Racional")
         font-size: 1.2em;
     }
 
-    .row{
-        margin-top: 30px;
-    }
 </style>
 </head>
 <body>
@@ -49,20 +46,35 @@ $tip = array("Emocional", "Intuitivo", "Racional")
                 <div class="block">
                     <h2 class="block-title">Dashboard</h2>
                     <ul>
+                        <li>
+                            <h6><a href="<?= base_url() ?>academia">Dashboard</a></h6>
+                        </li><!--
+                        -->
+                        <li>
+                            <a href="<?= base_url() ?>">Introduccion</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url() ?>academia/cartas">Eneagrama</a>
+                        </li><!--
+                        -->
+                        <li>
+                            <a href="<?= base_url() ?>academia/gestalt">Prueba gestalt</a>
+                        </li>
+
+
+                        <li>
+                            <a href="<?= base_url() ?>biblioteca">Anticurriculum</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url() ?>biblioteca">Disciplinas</a>
+                        </li>
                         <li class="is-active">
-                            <a href="#">Seccion 1</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 2</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 3</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 4</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 5</a>
+                            <a href="<?= base_url() ?>biblioteca">Base de conocimientos</a>
+                        </li>
+
+                        <br><br><br>
+                        <li>
+                            <a href="<?= base_url() ?>academia/salir">Cerrar sesión</a>
                         </li>
                     </ul>
                     <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
@@ -73,27 +85,27 @@ $tip = array("Emocional", "Intuitivo", "Racional")
                 <div class="container" id="eneatipos">
                     <div class="row" >
                         <div class="Three columns">
-                            <h1> Eneatipo <?= $eneatipo['Id_Eneagrama'] . ": " . $eneatipo['Nombre'] ?></h1>
+                            <h1> Eneatipo <?= $eneatipo['ide'] . ": " . $eneatipo['inomb'] ?></h1>
                         </div>
                     </div>
                     <div class="row">
                         <div class="four columns offset-by-one">
-                            <h4><?= $tip[$eneatipo['Centro'] - 1] ?></h4>
+                            <h4><?= $tip[$eneatipo['icen'] - 1] ?></h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="four columns offset-by-one">
-                            <h4>Estres: <?= $eene[$eneatipo['Est'] - 1] ?></h4>
+                            <h4>Estres: <?= $eene[$eneatipo['iest'] - 1] ?></h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="four columns offset-by-one">
-                            <h4>Seguridad: <?= $eene[$eneatipo['Seg'] - 1] ?></h4>
+                            <h4>Seguridad: <?= $eene[$eneatipo['iseg'] - 1] ?></h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="ten columns centered des">
-                            <?= $eneatipo['Desc_Corta'] ?>
+                            <?= $eneatipo['idescc'] ?>
                         </div>
                     </div>
                     <div class="row">
@@ -102,31 +114,31 @@ $tip = array("Emocional", "Intuitivo", "Racional")
                                 <tbody>
                                     <tr>
                                         <td>Pasión</td>
-                                        <td><?= $eneatipo['Pasion'] ?></td>
+                                        <td><?= $eneatipo['ipas'] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Fijación</td>
-                                        <td><?= $eneatipo['Fijacion'] ?></td>
+                                        <td><?= $eneatipo['ifij'] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Trampa</td>
-                                        <td><?= $eneatipo['Trampa'] ?></td>
+                                        <td><?= $eneatipo['itra'] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Función</td>
-                                        <td><?= $eneatipo['Funcion'] ?></td>
+                                        <td><?= $eneatipo['ifun'] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Visión</td>
-                                        <td><?= $eneatipo['Vision'] ?></td>
+                                        <td><?= $eneatipo['ivis'] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Temor</td>
-                                        <td><?= $eneatipo['Temor'] ?></td>
+                                        <td><?= $eneatipo['item'] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Deseo</td>
-                                        <td><?= $eneatipo['Deseo'] ?></td>
+                                        <td><?= $eneatipo['ides'] ?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -134,7 +146,7 @@ $tip = array("Emocional", "Intuitivo", "Racional")
                     </div>
                     <div class="row">
                         <div class="ten columns centered des">
-                            <?= $eneatipo['Desc'] ?>
+                            <?= $eneatipo['idesc'] ?>
                         </div>
                     </div>
                 </div>

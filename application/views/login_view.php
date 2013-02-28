@@ -13,39 +13,10 @@ $this->load->view("header");
                     <div class="container">
                         <div class="row">
                             <h1 class="block-title">Academia CTIN</h1>
-                            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
                         </div>
                     </div>
                 </div>
             </header>
-
-            <nav id="nav" role="navigation">
-                <div class="block">
-                    <h2 class="block-title">Dashboard</h2>
-                    <ul>
-                        <li class="is-active">
-                            <a href="#">Seccion 1</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 2</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 3</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 4</a>
-                        </li><!--
-                        --><li>
-                            <a href="#">Seccion 5</a>
-                        </li>
-                        <br><br><br>
-                        <li>
-                            <a href="<?=base_url()?>academia/salir">Cerrar sesión</a>
-                        </li>
-                    </ul>
-                    <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
-                </div>
-            </nav>
 
             <div id="main" role="main">
                 <div class="container">

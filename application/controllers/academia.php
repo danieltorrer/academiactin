@@ -86,15 +86,25 @@ class Academia extends CI_Controller {
     }
 
     public function dashboard() {
-        $this->load->view("dashboard_view");
+        if ($this->isValidated())
+            $this->load->view("dashboard_view");
+        else {
+            redirect("academia");
+        }
     }
 
     public function cartas() {
-        $data['base'] = base_url();
-        $this->load->model('tarjetas');
-        $tarjetas = $this->tarjetas->getTarjetas();
-        $data['tarjetas'] = $tarjetas;
-        $this->load->view("card_view", $data, $tarjetas);
+
+        if ($this->isValidated()) {
+
+            $data['base'] = base_url();
+            $this->load->model('tarjetas');
+            $tarjetas = $this->tarjetas->getTarjetas();
+            $data['tarjetas'] = $tarjetas;
+            $this->load->view("card_view", $data, $tarjetas);
+        } else {
+            redirect("academia");
+        }
     }
 
     public function salir() {
@@ -176,14 +186,11 @@ class Academia extends CI_Controller {
     }
 
     public function mostrareneatipo() {
-        $this->load->model("usuarios");
-        $eneatipo["resul"] = $this->usuarios->obtenereneatipo();
-        //$this->load->view("welcome_message",$eneatipo);
-        
+
         $this->load->model("eneatipo");
-        $data["eneatipo"] = $this->eneatipo->obtenEneatipo($eneatipo["resul"][0]["eneatipo"]);
-        
-        $this->load->view("eneatipo_view",$data);
+        $uen = $this->eneatipo->userenea();
+        $data["eneatipo"] = $this->eneatipo->get_eneatipo($uen['uen']);
+        $this->load->view("eneatipo_view", $data);
     }
 
 }
