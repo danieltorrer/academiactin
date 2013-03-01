@@ -168,6 +168,6 @@
 
 function tamano(){
         var largo = document.documentElement.clientHeight
-        console.log(largo)
+        //console.log(largo)
         $("#main").css("min-height", largo)
     }
