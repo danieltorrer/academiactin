@@ -362,6 +362,7 @@ footer[role="contentinfo"] {
 }
 
 /* extra */
+
 .baraja {
     width: 200px;
     margin: 30px auto;
@@ -386,6 +387,16 @@ footer[role="contentinfo"] {
     margin: 10px 3px 0;
 }
 
+ul.baraja-cont {
+    width: 100px;
+    height: 170px;
+    margin: 0 auto 30px;
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
 .baraja ul.baraja-cont li {
     border-radius: 10px;
     padding: 5px;
@@ -395,18 +406,6 @@ footer[role="contentinfo"] {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-
-
-ul.baraja-cont {
-    width: 100px;
-    height: 170px;
-    margin: 0 auto 30px;
-    position: relative;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
 }
 
 ul.baraja-cont li {
@@ -433,7 +432,42 @@ ul.baraja-cont li {
     overflow: scroll;
 }
 
-#papelera{
+.cartita{
+    width: 160px;
+    height: 80px;
+    border: solid;
+    border-width: 1px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #aaa;
+    border-radius: 5px;
+    float: left;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.cartita h4 {
+    color: #666;
+    font-size: 14px;
+}
+
+#paloma{
+    height: 50px;
+    width: 60px;
+    position: absolute;
+    left: 90%;
+    z-index: 999;
+}
+
+.bar{
+    display: none;
+}
+
+.del{
+    z-index: 100;
+}
+
+/*#papelera{
     position: absolute;
     top: 100%;
     left: 100%;
@@ -441,9 +475,9 @@ ul.baraja-cont li {
     margin-left: -170px;
     width: 100px;
     height: 100px;
-}
+}*/
 
-#drop2{
+/*#drop2{
     position: absolute;
     border: solid;
     width: 100px;
@@ -458,38 +492,4 @@ ul.baraja-cont li {
     border: solid;
     width: 85%;
     height: 100%;
-}
-
-.cartita{
-    width: 100px;
-    height: 150px;
-    border: solid;
-    border-width: 1px;
-    margin-left: 10px;
-    margin-top: 10px;
-    color: #aaa;
-    border-radius: 5px;
-    float: left;
-    text-align: center;
-}
-
-.cartita h4 {
-    color: #666;
-    font-size: 14px;
-    padding: 0px 0px 5px;
-    margin: 50px 3px 5px;
-    -webkit-transform: rotate(-90deg);
-    z-index: 1;
-}
-
-#paloma{
-    height: 50px;
-    width: 60px;
-    position: absolute;
-    left: 90%;
-    z-index: 999;
-}
-
-.bar{
-    display: none;
-}
+}*/
