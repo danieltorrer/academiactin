@@ -8,6 +8,18 @@ $this->load->view("header");
 
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
+<style>
+    .descripcion-carta{
+        height: 220px!important;
+        box-sizing: border-box;
+    }
+
+    .descripcion-carta p{
+        text-align: justify;
+    }
+</style>
+
 </head>
 <body>
     <div id="outer-wrap">
@@ -65,8 +77,7 @@ $this->load->view("header");
             <div id="main" role="main">
                 <div class="container">
                     <div class="row">
-                        <div class="two columns"></div>
-                        <div class="nine columns">
+                        <div class="five columns offset-by-three">
                             <?php
                             $sec = 1;
                             $cont = 0;
@@ -74,11 +85,11 @@ $this->load->view("header");
                                 echo "
                                            <div class='baraja bar' id='b{$sec}'>
                                                 <ul id='baraja-el{$sec}' class='baraja-cont'>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
-                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' data-desc='{$tarjetas[$cont]['desc']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' data-desc='{$tarjetas[$cont]['desc']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' data-desc='{$tarjetas[$cont]['desc']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' data-desc='{$tarjetas[$cont]['desc']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
+                                                    <li value='{$tarjetas[++$cont]['tipo']}' data-id='{$tarjetas[$cont]['id']}' data-nombre='{$tarjetas[$cont]['palabra']}' data-desc='{$tarjetas[$cont]['desc']}' class='sele'><h4>{$tarjetas[$cont]['palabra']}</h4></li>
                                                 </ul>
                                             </div>
                                         ";
@@ -86,8 +97,20 @@ $this->load->view("header");
                             }
                             ?>
                         </div>
-                        <div class="one columns">
-                            <a class="button" id="siguiente">Mas cartas</a>
+
+                        <div class="four columns">
+
+                            <div class="row">
+                                <div class="descripcion-carta">
+                                    <h5>Descripción</h5>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <a class="button" id="siguiente">Mas cartas</a>
+                                <a class="button secondary" id="instrucciones" data-reveal-id="instruccmodal" href="">Instrucciones</a>
+                            </div>
                         </div>
 
                     </div>
@@ -111,6 +134,15 @@ $this->load->view("header");
                 </div>
             </div>
 
+
+            <!-- Modal -->
+            <div id="instruccmodal" class="reveal-modal">
+                <h2>Awesome. I have it.</h2>
+                <p class="lead">Your couch.  It is mine.</p>
+                <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+                <a class="close-reveal-modal">&#215;</a>
+            </div>
+
             <!--Footer -->
             <footer role="contentinfo">
                 <!--<div class="block container">
@@ -127,9 +159,18 @@ $this->load->view("header");
     </div>
     <!--/#outer-wrap-->
 
-    <script src="<?= base_url() ?>media/js/main.js"></script>
+
     <script src="<?= base_url() ?>media/js/jquery.baraja.js"></script>
     <script src="<?= base_url() ?>media/js/newdrag.js"></script>
+    <script src="<?= base_url() ?>media/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".sele").hover(function(){
+                $(".descripcion-carta h5").text($(this).attr("data-nombre"))
+                $(".descripcion-carta p").text($(this).attr("data-desc"))
+            })
+        })
+    </script>
 
 </body>
 </html>
