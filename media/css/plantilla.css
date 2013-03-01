@@ -429,7 +429,7 @@ ul.baraja-cont li {
 #drop{
     width: 100%;
     border:dashed; 
-    height:300px;
+    height:335px;
     overflow: scroll;
 }
 
@@ -462,7 +462,7 @@ ul.baraja-cont li {
 
 .cartita{
     width: 100px;
-    height: 140px;
+    height: 150px;
     border: solid;
     border-width: 1px;
     margin-left: 10px;
