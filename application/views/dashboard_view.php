@@ -5,7 +5,6 @@ $this->load->view("header");
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>media/css/plantilla.css">
 <link rel="stylesheet" href="<?= base_url() ?>media/css/foundation.min.css">
 <link rel="stylesheet" href="<?= base_url() ?>media/css/mosaic.css">
-<link rel="stylesheet" href="<?= base_url() ?>media/css/dashboard.css">
 
 <script src="<?= base_url() ?>media/js/modernizr.custom.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/media/js/jquery.js"></script>
@@ -134,7 +133,7 @@ $this->load->view("header");
 
                                 <div class="mosaic-block cover four columns">
                                     <div class="mosaic-overlay"><img src="<?= base_url() ?>media/img/gestalt.png"/></div>
-                                    <a href="http://www.desktopped.com/featured/2010/12/mounted-imac-and-desk-mod-with-computer-components-built-in/" target="_self" class="mosaic-backdrop">
+                                    <a href="<?=base_url()?>academia/gestalt" target="_self" class="mosaic-backdrop">
                                         <div class="details">
                                             <h4>Prueba Gestalt</h4>
                                         </div>

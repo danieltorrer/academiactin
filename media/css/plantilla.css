@@ -206,6 +206,11 @@ body {
 #main {
     background: #fff;
     margin-bottom: 40px;
+   
+}
+
+.margen{
+     margin-top: 40px;
 }
 
 #main .block {
@@ -468,6 +473,22 @@ ul.baraja-cont {
     z-index: 100;
 }
 
+#eneatipos{
+    margin-top: 50px;
+}
+
+.details h4{
+    color: white !important;
+    padding: 30px 10px;
+}
+
+.p{
+    margin-bottom: 5px!important;
+}
+
+.p input{
+    margin-right: 5px;
+}
 /*#papelera{
     position: absolute;
     top: 100%;

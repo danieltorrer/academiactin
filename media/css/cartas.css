@@ -5,3 +5,12 @@
 #main .container .row:first-child{
     margin-top: 20px;
 }
+
+.descripcion-carta{
+    height: 220px!important;
+    box-sizing: border-box;
+}
+
+.descripcion-carta p{
+    text-align: justify;
+}

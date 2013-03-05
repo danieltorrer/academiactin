@@ -9,16 +9,7 @@ $this->load->view("header");
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 
-<style>
-    .descripcion-carta{
-        height: 220px!important;
-        box-sizing: border-box;
-    }
-
-    .descripcion-carta p{
-        text-align: justify;
-    }
-</style>
+<title>Eneagrama</title>
 
 </head>
 <body>
@@ -109,7 +100,7 @@ $this->load->view("header");
 
                             <div class="row">
                                 <a class="button" id="siguiente">Mas cartas</a>
-                                <a class="button secondary" id="instrucciones" data-reveal-id="instruccmodal" href="">Instrucciones</a>
+                                <a class="button secondary" id="instrucciones" data-reveal-id="instruccmodal" href="#">Instrucciones</a>
                             </div>
                         </div>
 
@@ -168,6 +159,11 @@ $this->load->view("header");
             $(".sele").hover(function(){
                 $(".descripcion-carta h5").text($(this).attr("data-nombre"))
                 $(".descripcion-carta p").text($(this).attr("data-desc"))
+            })
+            
+            $("#instrucciones").click(function(){
+                $(".descripcion-carta h5").text("Instrucciones")
+                $(".descripcion-carta p").text("muchas instrucciones bien bonitas")
             })
         })
     </script>
