@@ -42,7 +42,7 @@ $this->load->view("header");
                         </li><!--
                         -->
                         <li>
-                            <a href="<?= base_url() ?>academia/gestalt">Prueba gestalt</a>
+                            <a href="<?= base_url() ?>gestalt">Prueba gestalt</a>
                         </li>
 
 

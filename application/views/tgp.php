@@ -75,7 +75,7 @@ $this->load->view("header");
                     <div class="container">
                         <div class="row">
                             <h3>Responde las siguientes preguntas.</h3>
-                            <form action="<?= base_url() ?>gestalt/revisar" method="post">
+                            <form action="<?= base_url() ?>gestalt/resultado" method="post">
                                 <div class="row p">
                                     <div class="eight columns">
                                         1.- Yo Soy Insensible

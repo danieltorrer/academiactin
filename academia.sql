@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-02-2013 a las 22:52:15
+-- Tiempo de generación: 13-03-2013 a las 00:47:18
 -- Versión del servidor: 5.1.44
 -- Versión de PHP: 5.3.1
 
@@ -154,6 +154,31 @@ CREATE TABLE IF NOT EXISTS `Experiencia` (
 
 --
 -- Volcar la base de datos para la tabla `Experiencia`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gestalt`
+--
+
+CREATE TABLE IF NOT EXISTS `gestalt` (
+  `id_gestalt` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `retencion` int(11) NOT NULL,
+  `desensibilizacion` int(11) NOT NULL,
+  `proyeccion` int(11) NOT NULL,
+  `introyeccion` int(11) NOT NULL,
+  `retroflexion` int(11) NOT NULL,
+  `deflexion` int(11) NOT NULL,
+  `cofluencia` int(11) NOT NULL,
+  `fijacion` int(11) NOT NULL,
+  PRIMARY KEY (`id_gestalt`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Volcar la base de datos para la tabla `gestalt`
 --
 
 
@@ -327,4 +352,4 @@ CREATE TABLE IF NOT EXISTS `Usuarios` (
 --
 
 INSERT INTO `Usuarios` (`Id_Usuario`, `Nombre`, `Ap_Mat`, `Ap_Pat`, `Fecha_Nac`, `Edad`, `Lu_Nac`, `Nac`, `Gen`, `Direccion`, `Tel_Casa`, `Cel`, `Correo`, `Pass`, `Con_1`, `Con_2`, `Con_3`, `Con_4`, `Con_5`, `Movil`, `Web`, `Co_Dig`, `Ult_Proy`, `Co_Ent`, `Po_Que`, `Activo`, `eneatipo`) VALUES
-(1, 'Daniel', 'Hernandez', 'Torres', '1991-02-15', 22, 'Distrito Federal', 0, 0, 'Cerrada 30 norte', '2961409', '0442223278', 'pastor@gmail.com', 'f1e835a09c639c510bb61774f376dee994b7abd9', 1, 1, 1, 1, 1, 1, 1, 1, 'NADA', 'NADA', 'NADA', 1, 2);
+(1, 'Daniel', 'Hernandez', 'Torres', '1991-02-15', 22, 'Distrito Federal', 0, 0, 'Cerrada 30 norte', '2961409', '0442223278', 'pastor@gmail.com', '403926033d001b5279df37cbbe5287b7c7c267fa', 1, 1, 1, 1, 1, 1, 1, 1, 'NADA', 'NADA', 'NADA', 1, 1);

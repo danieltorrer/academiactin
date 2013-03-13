@@ -85,7 +85,7 @@ $this->load->view("header");
                             </li><!--
                             -->
                             <li>
-                                <a href="<?= base_url() ?>academia/gestalt">Prueba gestalt</a>
+                                <a href="<?= base_url() ?>gestalt/">Prueba gestalt</a>
                             </li>
 
 
@@ -133,7 +133,7 @@ $this->load->view("header");
 
                                 <div class="mosaic-block cover four columns">
                                     <div class="mosaic-overlay"><img src="<?= base_url() ?>media/img/gestalt.png"/></div>
-                                    <a href="<?=base_url()?>academia/gestalt" target="_self" class="mosaic-backdrop">
+                                    <a href="<?=base_url()?>gestalt" target="_self" class="mosaic-backdrop">
                                         <div class="details">
                                             <h4>Prueba Gestalt</h4>
                                         </div>
