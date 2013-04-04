@@ -6,8 +6,9 @@ class Gestalt_model extends CI_Model {
 
         $data = array(
             "id_usuario" => $this->session->userdata['id'],
-            "retencion" => $data["ds"],
-            "desensibilizacion" => $data["pr"],
+            "retencion" => $data["rt"],
+            "desensibilizacion" => $data["ds"],
+            "proyeccion" => $data["pr"],
             "introyeccion" => $data["in"],
             "retroflexion" => $data["rf"],
             "deflexion" => $data["df"],

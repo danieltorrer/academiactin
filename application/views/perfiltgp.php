@@ -104,6 +104,16 @@ $this->load->view("header");
                                         </div>
                                     </div>
                                     <div class="row catego">
+                                        <?=
+                                        var_dump($rtest);
+                                        var_dump($dsest);
+                                        var_dump($prest);
+                                        var_dump($inest);
+                                        var_dump($rfest);
+                                        var_dump($dfest);
+                                        var_dump($cfest);
+                                        var_dump($fiest);
+                                        ?>
                                         <div class="three columns">
                                             <p class="nom">Retención:</p>
                                             <p class="nom">Desensibilización:</p>

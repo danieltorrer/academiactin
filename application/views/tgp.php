@@ -301,10 +301,10 @@ $this->load->view("header");
                                         19.- Sería Feliz Si No Fuera Por Los Demás
                                     </div>
                                     <div class="two columns">
-                                        <INPUT TYPE="radio" NAME="q52" VALUE="2">Si
+                                        <INPUT TYPE="radio" NAME="q32" VALUE="2">Si
                                     </div>
                                     <div class="two columns">
-                                        <INPUT TYPE="radio" NAME="q52" VALUE="0">No
+                                        <INPUT TYPE="radio" NAME="q32" VALUE="0">No
                                     </div>
                                 </div>		
 

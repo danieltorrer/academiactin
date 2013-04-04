@@ -115,7 +115,6 @@ class Gestalt extends CI_Controller {
         
         $this->load->model("gestalt_model");
         $this->gestalt_model->insertar($data);
-
         $this->load->view('perfiltgp', $data);
     }
 

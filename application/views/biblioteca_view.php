@@ -65,7 +65,7 @@ $this->load->view("header");
             <div id="main" role="main">
                 <div class="container" id="eneatipos">
                     <div class="row" >
-                        <div class="three columns">
+                        <div class="four columns">
                             <div class="enea">
                                 <a href="<?= base_url() ?>biblioteca/eneatipo/1">
                                     <img src="http://placehold.it/300x300">
@@ -73,72 +73,77 @@ $this->load->view("header");
                                 <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
                             </div>
                         </div>
-                        <div class="three columns">
+                        <div class="four columns">
                             <div class="enea">
                                 <a href="<?= base_url() ?>biblioteca/eneatipo/1">
                                     <img src="http://placehold.it/300x300">
                                 </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/2">Eneatipo 2</a></p>
                             </div>
                         </div>
-                        <div class="three columns">
+                        <div class="four columns">
                             <div class="enea">
                                 <a href="<?= base_url() ?>biblioteca/eneatipo/1">
                                     <img src="http://placehold.it/300x300">
                                 </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/3">Eneatipo 3</a></p>
                             </div>
                         </div>
-                        <div class="three columns">
+
+                    </div>
+                    <div class="row" >
+
+                        <div class="four columns">
                             <div class="enea">
                                 <a href="<?= base_url() ?>biblioteca/eneatipo/1">
                                     <img src="http://placehold.it/300x300">
                                 </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/4">Eneatipo 4</a></p>
+                            </div>
+                        </div>
+                        <div class="four columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/1">
+                                    <img src="http://placehold.it/300x300">
+                                </a>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/5">Eneatipo 5</a></p>
+                            </div>
+                        </div>
+                        <div class="four columns">
+                            <div class="enea">
+                                <a href="<?= base_url() ?>biblioteca/eneatipo/1">
+                                    <img src="http://placehold.it/300x300">
+                                </a>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/6">Eneatipo 6</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="row" >
-                        <div class="three columns">
+
+                        <div class="four columns">
                             <div class="enea">
                                 <a href="<?= base_url() ?>biblioteca/eneatipo/1">
                                     <img src="http://placehold.it/300x300">
                                 </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/7">Eneatipo 7</a></p>
                             </div>
                         </div>
-                        <div class="three columns">
+
+                        <div class="four columns">
                             <div class="enea">
                                 <a href="<?= base_url() ?>biblioteca/eneatipo/1">
                                     <img src="http://placehold.it/300x300">
                                 </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/8">Eneatipo 8</a></p>
                             </div>
                         </div>
-                        <div class="three columns">
+
+                        <div class="four columns">
                             <div class="enea">
                                 <a href="<?= base_url() ?>biblioteca/eneatipo/1">
                                     <img src="http://placehold.it/300x300">
                                 </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
-                            </div>
-                        </div>
-                        <div class="three columns">
-                            <div class="enea">
-                                <a href="<?= base_url() ?>biblioteca/eneatipo/1">
-                                    <img src="http://placehold.it/300x300">
-                                </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" >
-                        <div class="three columns end">
-                            <div class="enea">
-                                <a href="<?= base_url() ?>biblioteca/eneatipo/1">
-                                    <img src="http://placehold.it/300x300">
-                                </a>
-                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/1">Eneatipo 1</a></p>
+                                <p> <a href="<?= base_url() ?>biblioteca/eneatipo/9">Eneatipo 9</a></p>
                             </div>
                         </div>
                     </div>
