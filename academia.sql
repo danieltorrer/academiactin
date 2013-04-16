@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-04-2013 a las 01:45:53
+-- Tiempo de generación: 17-04-2013 a las 01:51:25
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -27,16 +27,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `casohsoc` (
-  `Id_Caso` int(11) NOT NULL,
-  `Historia` text CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Id_Caso` int(11) NOT NULL AUTO_INCREMENT,
+  `Historia` text CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`Id_Caso`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `casohsoc`
 --
 
 INSERT INTO `casohsoc` (`Id_Caso`, `Historia`) VALUES
-(1, 'Raúl, Felipe, Alberto y María trabajan en un proyecto en común. Este proyecto lleva 3 meses y aún no tienen nada en concreto que presentar a su jefe. Esta situación generó un conflicto entre los 4 ya que cada uno cree que tiene que hacer cosas distintas. ');
+(1, 'Raúl, Felipe, Alberto y María trabajan en un proyecto en común. Este proyecto lleva 3 meses y aún no tienen nada en concreto que presentar a su jefe. Esta situación generó un conflicto entre los 4 ya que cada uno cree que tiene que hacer cosas distintas. '),
+(2, 'Después de un día donde todos en la oficina estuvieron muy estresados, Jorge y Patricia tuvieron una discusión respecto a una deficiencia en su trabajo, lo que desató una lluvia de comentarios de otros de sus compañeros como Esteban y Mirna.');
 
 -- --------------------------------------------------------
 
@@ -231,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `perhsoc` (
   `Silueta` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `Imagen` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`Id_Per`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `perhsoc`
@@ -241,7 +243,11 @@ INSERT INTO `perhsoc` (`Id_Per`, `Id_His`, `Nombre`, `Valor`, `P_Vista`, `Soluci
 (1, 1, 'Raúl', 6, 'Raúl dice que el problema que sus demás compañeros tienen es no ser disciplinados, puesto que no establecen horarios específicos de trabajo para avanzar programadamente, por lo tanto, el tiempo les ganó y no llevan nada. ', 'Debe cada uno establecer adecuadamente sus tiempos de trabajo y controlar las distracciones que los han hecho atrasarse en la entrega del proyecto para ser más eficientes a futuro.', '', ''),
 (2, 1, 'María', 7, 'María, cree que el problema está en que todos trabajan únicamenteen lo suyo y no se ponen en los zapatos de los demás para entender no solo su trabajo, sino también las razones por las que se ha atrasado en las entregas cada uno; cree importante el mejorar la relación entre ellos para trabajar mejor.', 'Cada uno debe ponerse en los zapatos del otro y comprender cuál es el origen de la falta en el trabajo, para de esa forma solucionar los problemas a futuro, mejorando también su relación y trabajando más cordialmente.', '', ''),
 (3, 1, 'Alberto', 8, 'Alberto cree que no están siendo responsables ninguno de ellos, puesto que se estableció una fecha en conjunto para entregar los avances y al no haberlo hecho, nadie ha asumido la responsabilidad que le toca.', 'Debe asumir cada uno la responsabilidad de sus acciones y lo que esto implica, entendiendo que una fecha de entrega es un compromiso de uno mismo con el otro, evitando en un futuro que esto se repita.', '', ''),
-(4, 1, 'Felipe', 4, 'Felipe considera que el problema está en la comunicación en el equipo, pues nunca supieron ponerse de acuerdo tanto en qué y cuándo tenían que entregar, ni tampoco se hablaron para ayudarse mutuamente.', 'Deben tener una comunicación más efectiva que les permita recurrir al otro cuando tengan un problema en particular, con lo que, entre todos encuentren la solución al problema.', '', '');
+(4, 1, 'Felipe', 4, 'Felipe considera que el problema está en la comunicación en el equipo, pues nunca supieron ponerse de acuerdo tanto en qué y cuándo tenían que entregar, ni tampoco se hablaron para ayudarse mutuamente.', 'Deben tener una comunicación más efectiva que les permita recurrir al otro cuando tengan un problema en particular, con lo que, entre todos encuentren la solución al problema.', '', ''),
+(5, 2, 'Mirna', 4, 'Mirna buscaba resolver el conflicto porque le parecía que esto podría afectar el desempeño del equipo al realizar un trabajo, ella creía que lo mejor era evitar discutir para no perjudicar su empleo.', 'Dejar de lado cualquier situación personal para ponderar el trabajo que tienen que hacer juntos, que es lo realmente importante.', '', ''),
+(6, 2, 'Esteban', 3, 'Esteban comentó todo lo que le molestaba de Mirna y Jorge, siendo completamente sincero con ellos para que pudieran conocer su opinión. ', 'Ser sinceros los unos con los otros y expresar abiertamente todo lo que les afecta del otro, con tal de limar absolutamente todos los conflictos aun cuando pueda parecer un poco dura la verdad.', '', ''),
+(7, 2, 'Jorge', 2, 'Jorge aceptaba las críticas guardando silencio y haciendo breves comentarios sobre ellas, para que supieran como veía él la situación', 'Aceptar las críticas y contestarlas, asumiendo la responsabilidad de los errores y estando en la disposición de solucionarlos.', '', ''),
+(8, 2, 'Patricia', 1, 'Patricia comentó sus críticas al trabajo de los demás, pero procuró suavizarlas y usar un lenguaje que no los insultara para evitar incrementar el conflicto.', 'Expresar las incomodidades o molestias con el equipo, suavizando información que pueda generar molestia y expresándose de forma que se respeten los derechos de todos los involucrados.', '', '');
 
 -- --------------------------------------------------------
 
