@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 16-04-2013 a las 20:55:23
--- Versión del servidor: 5.1.44
--- Versión de PHP: 5.3.1
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 17-04-2013 a las 01:45:53
+-- Versión del servidor: 5.5.27
+-- Versión de PHP: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -22,28 +23,41 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Conocimientos`
+-- Estructura de tabla para la tabla `casohsoc`
 --
 
-CREATE TABLE IF NOT EXISTS `Conocimientos` (
+CREATE TABLE IF NOT EXISTS `casohsoc` (
+  `Id_Caso` int(11) NOT NULL,
+  `Historia` text CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `casohsoc`
+--
+
+INSERT INTO `casohsoc` (`Id_Caso`, `Historia`) VALUES
+(1, 'Raúl, Felipe, Alberto y María trabajan en un proyecto en común. Este proyecto lleva 3 meses y aún no tienen nada en concreto que presentar a su jefe. Esta situación generó un conflicto entre los 4 ya que cada uno cree que tiene que hacer cosas distintas. ');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `conocimientos`
+--
+
+CREATE TABLE IF NOT EXISTS `conocimientos` (
   `Id_Con` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(120) COLLATE utf8_spanish2_ci NOT NULL,
   `Desc` text COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`Id_Con`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ;
 
---
--- Volcar la base de datos para la tabla `Conocimientos`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Educacion`
+-- Estructura de tabla para la tabla `educacion`
 --
 
-CREATE TABLE IF NOT EXISTS `Educacion` (
+CREATE TABLE IF NOT EXISTS `educacion` (
   `Id_Edu` int(11) NOT NULL AUTO_INCREMENT,
   `Id_Usu` int(11) NOT NULL,
   `Id_Ins` int(11) NOT NULL,
@@ -55,18 +69,13 @@ CREATE TABLE IF NOT EXISTS `Educacion` (
   PRIMARY KEY (`Id_Edu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ;
 
---
--- Volcar la base de datos para la tabla `Educacion`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Eneatipos`
+-- Estructura de tabla para la tabla `eneatipos`
 --
 
-CREATE TABLE IF NOT EXISTS `Eneatipos` (
+CREATE TABLE IF NOT EXISTS `eneatipos` (
   `Id_Eneagrama` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `Desc_Corta` text COLLATE utf8_spanish2_ci NOT NULL,
@@ -86,10 +95,10 @@ CREATE TABLE IF NOT EXISTS `Eneatipos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=10 ;
 
 --
--- Volcar la base de datos para la tabla `Eneatipos`
+-- Volcado de datos para la tabla `eneatipos`
 --
 
-INSERT INTO `Eneatipos` (`Id_Eneagrama`, `Nombre`, `Desc_Corta`, `Desc`, `Centro`, `Pasion`, `Fijacion`, `Vision`, `Temor`, `Deseo`, `Trampa`, `Descript`, `Est`, `Seg`, `Funcion`) VALUES
+INSERT INTO `eneatipos` (`Id_Eneagrama`, `Nombre`, `Desc_Corta`, `Desc`, `Centro`, `Pasion`, `Fijacion`, `Vision`, `Temor`, `Deseo`, `Trampa`, `Descript`, `Est`, `Seg`, `Funcion`) VALUES
 (1, 'El Reformador', 'El tipo racional, idealista, de sólidos principios, determinado, \r\ncontrolado y perfeccionista.<br><br>\r\n\r\nPersonas que comparan la realidad con un conjunto de normas o estándares. Pueden ser objetivos, equilibrados y moralmente heroicos o represivos, críticos, y perfeccionistas.', 'Los Unos tienen una tendencia muy acentuada de manera inconsciente para comparar la realidad con lo que esta debería de ser. Usualmente tienen un conjunto de normas o ideales con los que se miden y con los que comparan el comportamiento de los demás y del mundo a su alrededor.<br><br>\r\nEstos ideales difieren de persona a persona. Algunos podrían preocuparse por las normas espirituales mientras que otros se enfocan en los buenos modales. Otros podrían ser los reformadores sociales y en otros simplemente se manifiesta como el deseo de vivir vidas correctas o justas y mejorar en las labores que desempeñan.<br><br>\r\nEn su aspecto Sano, son especialistas en la percepción moral exacta y la evaluación objetiva. Mucho más que otros estilos en el eneagrama, los Unos pueden ser éticamente discernidores, desapasionados y justos. Pueden ser tanto excelentes sacerdotes y jueces como críticos sociales constructivos.\r\nPueden ser generosos y moralmente heroicos, podrían sacrificarse personalmente en aras de un ideal. Si tienen una causa o una misión, trabajarán enérgica y responsablemente para cumplirla.<br><br>\r\nValoran la ética y la integridad por sobre la conveniencia, ganancia o las soluciones facilistas. Las personas con este estilo a menudo despliegan un perfeccionismo equilibrado y alegre que armonizan con el perdón y la compasión.\r\nPoseen una gran capacidad para la sensatez y la moderación. Son personas de principios fuertes y de mucha energía orientadas a la acción. Prestan atención al significado de los actos. Buscan las verdades eternas y confían en ellas. Son visionarios con miras claras de lo correcto y el modo de alcanzarlo.\r\nCuando los Unos son menos sanos, su preocupación con los principios y los altos ideales degenera en una preocupación más mundana por las reglas y las normas. De forma tal que pueden iniciar cruzadas por una causa que tiene, sin embargo, más promoción del ego de lo que ellos mismos se dan cuenta. Confunden la moralidad con el moralismo y el discernimiento con el juicio.<br><br>\r\nLos Unos menos sanos podrían sacrificarse para mantener las reglas, pero inconscientemente resentirse. Pueden ponerse críticos o enfadados cuando su celo de reformas no es compartido por el mundo en general. Podrían trabajar aun muy duramente y sostener normas estrictas de conducta, pero su discurso puede tornarse punzante por sus ácidos comentarios, dado que su irritación los atraviesa sin que lo noten. Su calma y perspectiva ética, puede denigrar en un pensamiento polar o dual —o proposiciones de ni esto ni lo otro tampoco, dilemas de bueno o malo que reducen las situaciones complejas a simples opciones de blanco y negro.\r\nEl esfuerzo de un Uno por ser bueno es una empresa muy tensa, a la vez que lo lleva a menudo a la conducta rígida, la exigencia y la preocupación obsesiva. Muchos luchan con sus deseos, sobre todo los malos. Éstos son a menudo de naturaleza sensual, todo lo contrario de lo que cualquier Uno considera una conducta buena y virtuosa.<br><br>\r\nLos problemas sociales pueden surgir porque los Unos tienen problemas para saber cuando están enfadados y no comprenden cuanto de irritados y represivos suenan a los demás. Cuando se sienten inseguros o criticados, la reacción defensiva de un Uno es comenzar a Juzgar. Sencillamente no aceptan la realidad tal cual es y no esperan que usted lo haga. <br><br>\r\nCualquier cosa que desaprueban de sí mismos lo condenan en los demás. No pueden permitirse actuar mal pero eso no significa que no lo deseen. Los Unos en este estado tienden a negar o contener sus deseos y entonces los proyectan al exterior.<br><br>\r\nAsí un Uno podría ver una invitación para nadar en un día de verano y de repente empezar a hablar sobre los males de la pereza y los trajes de baño tan pequeños que la gente usa hoy día. Los Uno transfieren su deseo sensual de nadar hacia el ambiente y entonces incriminan al deseo.<br><br>\r\nLas personas muy enfermas con este estilo pueden crecer obsesivas, paranoicas y celosas. Pueden ser crueles y persecutorias al servicio de la bondad. Malsanos pueden ser moralmente vanos e hipócritas, así como obsesionados con cumplir proyectos y misiones enfermizamente concebidas. Muchas formas de fundamentalismos religiosos e ideológicos se disparan a través de este espíritu de enferma Unosedad.', 1, 'Ira', 'Resentimiento', '"Yo Reformo"', 'Furia Abierta', 'Sentirse Perfecto', 'Perfección', 'Crítica, exigencia, dominación, perfeccionismo, hipercontrol, autocrítica soterrada, disciplina, irritación no expresada, rigidez, puritanismo, autoconfianza.', 4, 7, 'Normativa'),
 (2, 'El Ayudador', 'El tipo interpersonal, preocupado por los demás: generoso,\r\ndemostrativo, complaciente y posesivo.<br><br>\r\nPersonas que ven el mundo de forma interpersonal y se definen a través del servicio a otros. Pueden ser generosos, amorosos y entregados o dependientes, orgullosos y hostiles.', 'En la organización del Eneagrama, Dos, Tres y Cuatros conforman un trío emocional, en él comparten tendencias básicas y puntos de vista generales. La gente dentro de este trío de estilos puede experimentar una clase de confusión permanente sobre sus identidades, confundiendo quiénes son con los papeles o roles que desempeñan y las imágenes de lo que aparentan ser.\r\nEn alguna medida, todos los estilos de personalidad hacen esto pero son los Dos, los Tres y los Cuatros quienes están más propensos a confundir el parecer con el ser. Las personas de este trío tienden a rechazar cómo se sienten de verdad, en favor de cómo se supone deben sentirse según los roles que estén ejecutando. La gente con estos estilos es propensa a los conflictos en las relaciones y las materias del "corazón".<br><br>\r\nDe todo el Eneagrama, los Dos son el estilo más puramente interpersonal. Son muy inclinados a concebir la vida como una forma básica de dar-y-tomar entre las personas, relacionando a todos los seres humanos como miembros de una inmensa familia. Desde este punto de vista: dar amor se convierte en la cosa más importante que un Dos puede hacer.<br><br>\r\n\r\nLas personas con este estilo tienen una capacidad bastante desarrollada para identificarse emocionalmente con las necesidades de otros. Tienen un hábito fuertemente inconsciente de volcarse hacia otras personas e intuitivamente adivinar lo que podrían estar sintiendo o necesitando. Los Dos sanos practican este hábito voluntariamente; se identifican de buena gana con alguien más antes de dar su propio punto de vista, "poniéndose en los zapatos del otro". Pueden encargarse de las necesidades ajenas y, al mismo tiempo continuar valorando su propia verdad emocional, y atendiendo con eficacia sus propias necesidades. La frase "se presta a otros pero se da a sí mismo" describe lo que los Dos hacen en estado sano.<br><br>\r\nEn su mejor momento, los Dos son capaces de verdaderamente amarse y entregarse y tienen habilidades ministeriales excepcionales. Las biografías de algunos santos retratan a los Dos dedicados a liberar del sufrimiento tanto material como espiritual. Haya tenido o no éxito, la intención clásica del cristianismo es fundamentalmente Dos.<br><br>\r\nCuando los Dos están en un nivel menos sano, siguen invirtiendo su atención sobre los demás, pero ahora se olvidan de regresar a su propia posición. <br><br>Comienzan a reprimir sus propias necesidades y a concentrar sus energías en cuidar de otros, lo necesiten ellos o no. Ahora se sobre-identifican con los demás perdiendo a la par su sentido de sí mismos, y se entregan compulsivamente con la esperanza de ser reconocidos, apreciados y amados. Por medio de otras personas, los Dos intentan darse a ellos mismos, satisfacer necesidades que antes han rechazado en ellos mismos y ahora han re-localizado en otros. Los Dos en esta fase pueden comenzar también a temer ser abandonados y quedarse solos.\r\n<br><br>\r\nLos Dos malsanos utilizan la adulación, manipulación y seducción para conseguir que los demás reaccionen y los definan; obtener una sensación de ser a través de la mirada ajena. La necesidad del Dos de dar es tan fuerte que se vuelve egoísta y lo que se da lleva impresa una etiqueta invisible del precio a pagar. A menudo es un alto precio a pagar como Dos, el compensarse por haber perdido su yo real, y comenzar a inflar y exagerar la importancia de lo que dan a otros. Esta exagerada auto-importancia se conoce de otra manera como orgullo, y cuando los Dos están muy enfermos, el orgullo se vuelve su rasgo más llamativo y característico.<br><br>\r\nNo es raro entonces, que los Dos forcejeen o se opongan en las relaciones, dado que es muy importante para ellos conocer sus verdaderos sentimientos y motivaciones para poder relacionarse honestamente con otros. Cuando los Dos están profundamente enfermos, generalmente se engañan por completo sobre sus motivaciones. Reemplazan sus sentimientos reales de desesperación egoísta y agresión con la imagen de un mártir altruista a quien se le deben grandes sumas por sus maravillosos esfuerzos. Lo que confunde y enloquece a los demás sobre los Dos enfermos es la manera como empaquetan lo que sienten como hostilidad y lo presentan como si fuese amor.<br><br>\r\nEl lado mas alto de este estilo es de hecho muy elevado, mientras que la expresión más baja puede ser violentamente destructiva. La forma de acercarse furtivamente al objeto de su amor que va con el lado enfermo de este estilo es similar a la metáfora del vampiro que vive de la sangre de otros.', 2, 'Soberbia, Orgullo', 'Halago, Adulación', '"Yo Ayudo"', 'Sentir Que Necesitan', 'Sentirse Amado ', 'Servicio', 'Necesidad de amor, hedonismo, seducción, asertividad, tendencia a cuidar, falsa abundancia, histrionismo, emocionalidad impresionable.', 8, 4, 'Autoestima'),
 (3, 'El Triunfador', 'El tipo pragmático, orientado al éxito, adaptable, sobresaliente, \r\nambicioso y consciente de su imagen.<br><br>\r\nPersonas que se miden por el logro externo y los papeles que desempeñan. Pueden ser veraces, realizados y sinceros o convenencieros, competitivos y falsos.', 'Los Tres se identifican menos con los papeles de utilidad interpersonal y más con las imágenes del éxito y la productividad. Suelen esperar ser amados más que por lo que son, por lo que hacen. Están emocionalmente confundidos por una realización aparente que se opone a una auténtica realización de sus sí mismos internos de poca perfección.<br><br> Los Tres menos sanos tienden a desconectar sus sentimientos más profundos en favor de las apariencias externas. Niegan sus imperfecciones y presentan una imagen pública que el mundo encontrará favorable. Esta imagen justamente es el reverso de quién los Tres en secreto temen podrían ser.<br><br>\r\nLos Tres en su mejor aspecto están genuinamente dotados y practican un credo de excelencia y profesionalismo. Son excepcionalmente hábiles para establecer y cumplir metas y por regla general dominan muchas destrezas en el mundo. Aprenden rápido, forman buenos lideres y normalmente les va bien en ocupaciones socialmente establecidas como de alto perfil, donde el desempeño se mide por resultados. La mayoría son organizados, flexibles y laboriosos. Cuando sanos, por lo general conforman excelentes modelos a imitar y maestros talentosos de cualesquier habilidad que dominan. También pueden mostrar una capacidad a veces asombrosa para la toma de acción efectiva y eficiente. Son especialmente buenos en multi-tareas, haciendo muchas cosas a la vez.<br><br>\r\nLos Tres saludable pueden ser enérgicos y alegres, con un ojo positivo al futuro; seguros de sí mismos y abiertos a los desafíos. Sus acciones a menudo son gobernadas por un sentido del honor y valoran la familia y la amistad además del trabajo. Los Tres a veces llegan a estas prioridades después de una lucha con la conveniencia moral y una búsqueda consciente de los valores significativos.<br><br>\r\nCuando los Tres son menos sanos, su estrategia de ser exitosos y bien redondeados da paso a un deseo de parecer que lo son y así comienzan a cortar esquinas para sostener una imagen. Los Tres pueden caer rápidamente en las personificaciones y jugar un papel de sí mismos adoptando, como un camaleón, poses distintas para parecer sobresaliente en diferentes contextos. Comienzan a negar sus sentimientos personales y a identificarse cada vez más con una máscara. La mayoría de los Tres tienen un talón de Aquiles, un sentido de insuficiencia que compensan con el logro y la imitación.<br><br>\r\nLas relaciones íntimas pueden sufrir cuando los Tres desvían sus sentimientos por medio de la imagen de quienes deberían ser. Pueden presentar un personaje a los amigos o compañeros, ocultando un profundo sentido de defecto y, en cambio, ofrecer una máscara que sea del agrado de otros. La conveniencia y la eficacia se convierten en lo más importante y un Tres enfermo puede empezar a disfrutar el sentimiento del no-sentimiento. Pueden concebirse como maquinas de alto rendimiento cuyo propósito es correr de tarea en tarea, asegurando los resultados antes de llegar a la nueva línea de meta. No es raro para los Tres hablar con metáforas deportivas y creer que la vida es sólo un juego: un juego que se juega para ganar.<br><br>\r\nPara ganar, se espolean arduamente, convirtiéndose en una excesiva forma de ser hiperactivos y usando sus relaciones principalmente como trampolines para su beneficio profesional. Su, una vez sana flexibilidad, degenera en cálculo arrogante y estratagema amoral. Los Tres operan cómodamente en ocupaciones dónde la apariencia y la persuasión son importantes --relaciones públicas, ventas, publicistas— y a menudo se convierten ellos mismos en un artículo más a comercializar.<br><br>\r\nPara el Tres muy enfermo ganar se convierte en lo único que existe. Y su mascara de Tres puede eclipsar por completo su alma. Pueden ser amorales, Maquiavélicos, despiadados, mañosos y plagiarios. Empiezan a creerse sus propias mentiras y a entrampar a las personas sin conciencia alguna de ello. Su objetivo es mantener una ilusión de superioridad de la cual derivan un sentido vindicativo de triunfo. <br><br>Quienquiera que en su vida haya sido deliberada y maliciosamente engañado ha sentido la picadura de esta actitud.', 2, 'Vanidad, engaño', 'Desasosiego', '"Yo Exitoso"', 'Fracaso', 'Tener éxito, ser admirado', 'Eficiencia', 'Necesidad de atención, orientación al logro, sofisticación, habilidad social, cultivo del atractivo sexual, manipulación de la imagen, orientación hacia los demás, pragmatismo, vigilancia activa, superficialidad.', 9, 6, 'Autopresentación'),
@@ -98,16 +107,16 @@ INSERT INTO `Eneatipos` (`Id_Eneagrama`, `Nombre`, `Desc_Corta`, `Desc`, `Centro
 (6, 'El Leal', 'El tipo comprometido, orientado a la seguridad, encantador, \r\nresponsable, nervioso y desconfiado.<br><br>\r\nPersonas que anticipan los peligros del mundo. Cuando sanos a menudo son valerosos, fieles y eficaces. Mientras que enfermos pueden ser cobardes, masoquistas y paranoicos.', 'Los Seis son el estilo más explícitamente temeroso dentro del Eneagrama. Las personas con esta orientación están especialmente conscientes de los peligros de la vida y alertas a los riesgos que pueden acechar bajo las apariencias cotidianas.\r\nHay dos tipos de Seis: Fóbico y Contrafóbico. <br><br>Sus reacciones al experimentar temor son externamente tan contrarias que parecerían estilos diferentes dentro del Eneagrama. Cuando los Seis fóbicos se dan cuenta del peligro, se encogen. Pueden actuar cautelosamente, dóciles o ambivalentes para evitar el potencial ataque. Cuando los Seis contrafóbicos se dan cuenta del peligro, a menudo lo provocan deliberadamente actuando de forma abierta y agresiva, deseando ocuparse del problema antes de que él se ocupe de ellos.<br><br> Los Seis fóbicos puede ser encantadores, modestos y sumisos mientras que los contrafóbicos pueden parecer duros, desafiantes y pendencieros. Algunos Seis son completamente fóbicos o contrafóbicos, pero la mayoría existen a lo largo de un continuo dónde son más de lo uno que de lo otro.<br><br>\r\nLos Seis fóbicos en su mejor estado son constantes, leales e idealistas. Son obedientes pero de una manera voluntaria y dedicada. Comúnmente se encuentran comprometidos con un grupo, tradición o causa más allá de sí mismos. Cumplen sus promesas, trabajan arduamente y son amigos honorables y protectores.<br><br>\r\nLos Seis fóbicos sanos son a menudo corteses y diplomáticos. Ponen de buen humor a los demás y son bien vistos por sus discreción y principios. Son muy divertidos y tienen a menudo vivas imaginaciones. Los Seis sanos manejan el poder con la integridad y pueden ser líderes justos y dispuestos porque simpatizan con los desvalidos. Pueden afirmar su valor personal pero también quieren que dentro de su grupo otros consigan el reconocimiento. No pasan por encima de la gente y son capaces de tomar medidas impopulares en caso de ser necesario. Sin embargo, generalmente los Seis sanos trabajaran hacia soluciones que beneficien el grupo y permitan ganar a todos.<br><br>\r\nCuando los Seis fóbicos están menos sanos, pueden volverse más ciegamente obedientes al mismo tiempo que asumen menos responsabilidad personal. Podrían delegar su poder sutilmente hacia una autoridad externa y comenzar a idealizar a aquéllos que parecen más seguro de sí mismos. Los Seis encienden un trato inconsciente con su héroe, un trato que dice: Haré lo que usted quiere que haga si me protege del peligro. Los Seis se esconden entonces bajo un paraguas imaginario, prometiendo fidelidad a esta fuerza externa, creciendo adictos a la seguridad que este arreglo parece ofrecer. La sana capacidad del Seis para la profunda lealtad es una arma de doble filo cuando están menos sanos; los Seis son a menudo leales a las personas incorrectas.<br><br>\r\nCuando ceden su poder, los Seis fóbicos comienzan a preocuparse crónicamente y sentirse conscientemente desamparados. Para compensar, se vuelven cautos y cuidadosos, tratando de anticiparse a los motivos de los demás. Pueden intentar también controlar sus propios impulsos agresivos o fuertes, de modo que no se desvíen del papel sumiso que han estado de acuerdo en jugar. Podrían tener problema en terminar aquello que empiezan al preocuparse sobre quién criticará el producto terminado. Pueden parecer amistosos, pero en el fondo ser pasivo-agresivos o emitir mensajes contradictorios dado que su enojo los atraviesa. Los Seis fóbicos también puede ponerse nerviosos, vacilantes, escépticos, tensos, indecisos y atarse al victimismo.<br><br>\r\nCuando están profundamente enfermos los Seis fóbicos se confunden con el miedo y abiertamente dependen de otros. Podrían entregar su vida al trabajo, volviéndose serviles esclavos de un trabajo o un jefe. Podrían actuar como débiles perdedores, impotentes y aún así demandar mimos de los amigos, tiranizando a los demás con su impotencia; poniendo estrechos y estrictos limites a lo que serían capaces de intentar o de arriesgarse. <br><br>Los Seis fóbicos muy enfermos evitan los desafíos, crónicamente catastróficos pueden perseguir a aquellos que se desvían de las normas. También pueden ser pusilánimes, legalistas, pequeños, intolerantes, melodramáticos y dogmáticos.<br><br>\r\nLos Seis contrafóbicos en su mejor momento son a menudo valerosos, tomarán el tigre por la cola y jalaran de él. Pueden ser físicamente aventureros, muy experimentados y pueden tener un gusto real por vivir. Si participan de una tradición, normalmente estarán en el papel del tábano constructivo. Su misión subyacente es servir a la tradición avivándola. Se consideran jugadores del equipo que ofrecen alternativas útiles, usando lo viejo como un trampolín a lo nuevo. Con este propósito, pueden ser enérgicos, honrados, asertivos y tienen muchas y muy buenas ideas.<br><br>\r\nSi un Seis contrafóbico sano no está sirviendo a una tradición, él o ella son a menudo creativos y originales. La capacidad del Seis de mirar más allá de las apariencias y cuestionar los supuestos los conduce profundamente a un punto de vista único. La expresión artística es atractiva como una afirmación del centro de su poder y como una forma de resolver un sentido general de turbación.<br><br>\r\nLos Seis contrafóbicos menos sanos tienen a menudo una calidad afilada, inquieta. Algunos encauzan sus energías en la actividad física; disfrutan los deportes y tienden a ser más abiertamente competitivos que los Seis fóbicos. Los contrafóbicos tienden a esconder sus inseguridades con máscaras frías o duras. El meollo del desafío físico es trascender el miedo enfrentando el peligro. En lugar de estar pasivamente asustados toman los riesgos, llaman al miedo y, entonces lo golpean. Si los Seis fóbicos se entregan a la seguridad, entonces los Seis contrafóbicos se entregan a la inseguridad.<br><br>\r\nLos Seis contrafóbicos son a menudo desafiantes o rebeldes con la autoridad y habitualmente encuentran contraejemplos a cualquier cosa que otros afirman. A pesar de esta actitud, son a menudo leales obreros y muy idealistas. Pueden sentir más agudamente que otros que el mundo esta injustamente polarizado en contra suya; algunos tienen una cualidad de enfurecerse, sobre todo cuando hablan acerca de los gobiernos y las estructuras de poder. Muchos de ellos son irónicamente divertidos y buenos en la sátira. Sin embargo, estando inseguros, su humor puede morder y picar.<br><br>\r\nCuando se encuentran profundamente enfermos, los Seis contrafóbicos pueden ser agresivos, inestables e insensatamente intransigentes. Para sofocar sus miedos internos utilizan compulsivamente la acción y son proclives a tomar decisiones incorrectas. También pueden ser estérilmente hiperactivos así como paranoicos, inculpadores, conflictivos y rencorosos. Algunos contrafóbicos aprecian sus odios y pueden ser agresivamente groseros o incluso peligrosos. Cuando enardecidos pueden adoptar un guardia de tipo mental.<br><br>\r\nLos Seis contrafóbicos profundamente enfermos generalmente actúan mucho peor que aquellas autoridades a las ellos mismos acusan de abusar del poder.', 3, 'Miedo', 'Duda', '"Yo Obedezco"', 'Transgresión', 'Sentirse Seguro', 'Seguridad', 'Cobardía, ansiedad, hiperintencionalidad supervigilante, orientación teórica, amistad congraciadora, rigidez, belicosidad, orientación hacia la autoridad y los ideales, acusación de sí mismos y de los demás, ambivalencia, titubeo, detección de averías, autoritarismo, cuestionador.', 3, 9, 'Autodefensa'),
 (7, 'El Entusiasta', 'El tipo activo, divertido, espontáneo, versátil, ambicioso y disperso.\r\nPersonas que buscan múltiples opciones y futuros positivos.<br><br> Pueden ser polifacéticos, afirmadores y generosos. Enfermos pueden ser narcisistas, escapistas e insaciables.', 'Los Sietes son el último estilo dentro del trío que responde temerosamente a la vida. Considerando que los Cincos se retiran socialmente y los Seis se vuelven dudosos o suspicaces, los Sietes manejan sus miedos de una manera muy diferente. Las personas con este estilo tienden a suprimir y escapar de sus miedos enfocándose intencionalmente en lo positivo e imaginando planes, opciones y posibilidades. Los Sietes son re-encuadradores naturales dado que se enfocan en el lado luminoso de las cosas; hacen limonada sin limones, y se mantienen alegremente activos. El punto defensivo de esta estrategia es el de evitar el dolor interno y ser difícil de alcanzar como si fuesen un blanco móvil.\r\nLos Sietes sanos son personas renacentistas y polifacéticas capaces de desarrollarse favorablemente en muchos ámbitos totalmente dispares entre sí. <br><br>Las personas sanas con este estilo son normalmente aventureras y multi-talentosas, con un entusiasmo auténtico por la vida. Como niños, sin ser infantiles, los Sietes sanos son enormemente receptivos. La mayoría tienen una perspectiva positiva y estimulante y pueden apreciar de manera entusiasta los regalos que otorga la vida, incluso los más pequeños. Muchos poseen una amistosa mezcla de encanto y curiosidad; pudiendo ser creativos, extrovertidos, generosos con los amigos y constantemente interesados en los nuevos horizontes. Los Sietes sanos son normalmente muy elásticos y suelen regresar fortalecidos de la pérdida y la calamidad. También suelen ser leales y sensibles.<br><br>\r\nEn su mejor momento, las personas con este estilo buscan compromisos de gran alcance y las más profundas satisfacciones. Con este propósito, pueden aceptar la real necesidad tanto del dolor como del compromiso en sus vidas. Aceptar la dimensión dolorosa de la vida le otorga al Siete mayor profundidad y por consiguiente refuerza su alegría. Muchos Sietes reportan que al estar dispuestos a hacer los compromisos apropiados, esto genera una estructura global dentro de la que aun pueden encontrar variedad en sus vidas.\r\nCuando están menos sanos, las personas con este estilo son propensas al escapismo e intentan evitar el dolor tanto en ellos como en los demás. <br><br>Proyectan su poder hacia fuerzas externas que pueden confinarlos, restringirlos, deprimirlos o juzgarlos. Los Siete se auto-encarcelan dado que pueden rodearse con las personas y las circunstancias que los fijarán o obligarán, imitando lo que los Sietes les hacen a ellos. Después de crear una cárcel de expectativas y obligaciones, se sienten desvalidos, como si no tuviesen opción alguna. Para compensar, hiperflexibilizan su capacidad de elección.<br><br>\r\nLos Sietes controlan y subliman su dolor complaciendo sus apetitos. Éstos pueden ser por comida, drogas, ideas, actividad, personas, nuevas experiencias, etc. Los Sietes Enfermos devoran la vida pero no lo digieren. Buscan afuera la novedad, intentando mantenerse en alto a través de condimentar la realidad con sus imaginaciones y fantasías de lo que será. Pueden ser diletantes, impulsivos, rebeldes, impersonales, locuaces, narcisistas y codiciosos. Pueden abrigar muchos intereses pero indiscriminadamente; su conocimiento es extenso pero no profundo, más bien como un "milusos".<br><br>\r\nMuchos Sietes tienen problemas con la ejecución. Tienden a ser fuertes en comenzar la acción pero débiles en la continuación. Normalmente no les asusta iniciar un curso de acción o un nuevo proyecto. Su dificultad estriba en la aplicación diaria de tareas a largo plazo y en soportar su aburrido alargamiento.<br><br>\r\nAlgunos Sietes temen el proceso. No tienen ningún sentido bien desarrollado de cómo hacer las cosas paso por paso. El pensar en poner un pie delante de otro no sólo es aburrido sino más aún: espantoso.<br><br>\r\nBajo tensión, los Sietes también adoptan aquello que llaman encuadres "como si" dónde crean fantasías positivas sobre el futuro y pretenden que estas sean reales y estén presentes. A veces evitan las situaciones difíciles de esta manera, eliminando la necesidad de esforzarse, los riesgos del fracaso o el tener que juzgar sus acciones. La mayoría de los Sietes enfermos tienen miedo a ser inadecuados e inconscientemente se comparan con otros.<br><br>\r\n\r\nCuando los Sietes están profundamente enfermos, la línea entre la realidad y la fantasía se pierde drásticamente. Crecen obsesionados con visones grandiosas y a menudo se inflan narcisistamente. Los Sietes muy enfermos puede rechazar completamente la responsabilidad por sus acciones y resistir todo limite realista en su conducta. Pueden ser salvajes, impacientes, caóticos, delirantes y explosivos. Las tendencias hacia las adicciones y los ciclos maníaco-depresivos se enroscan fuertemente. <br><br>Puesto que nunca pueden satisfacer permanentemente sus apetitos, puede zambullirse precipitadamente en el hedonismo, buscando más que consumir. Cualquiera que se ponga en el camino de un Siete maniaco será derribado; son rotas todas las promesas hechas a los demás. Cuando muy enfermos, los Sietes atraen a las fuerzas legales hacia ellos. El mundo tiene que refrenar el comportamiento antisocial nacido de los deseos internos de los Sietes.', 3, 'Guía', 'Planificación', '"Yo Divierto"', 'Dolor', 'Sentirse Feliz', 'Positivismo', 'Permisividad, hedonismo, interés por lo remoto y lo extraordinario, orientación futurista, satisfacción imaginaria del deseo, rebeldía, falta de disciplina, complacencia seductora, generosidad, encanto, narcisismo, persuasión, fraudulencia, charlatanería.', 1, 5, 'Evitación'),
 (8, 'El Desafiador', 'El tipo poderoso, dominante, seguro de sí mismo, decidido,\r\nvoluntarioso y retador.<br><br>\r\nPersonas que necesitan ser fuertes y prevalecer sobre las circunstancias. Estando sanos a menudo son poderosos, protectores y comprometidos con una causa. Degradados pueden ser destructivos, desmedidos y sádicos.', 'Los Ochos, Nueves y Unos comparten un trasfondo general de rabia y forman otro trío. Si los Dos, Tres y Cuatros pueden confundirse sobre quiénes son y cómo se sienten y los Cincos, Seis y Sietes reaccionan temerosamente y están desconcertados al momento de tomar acción. Los Ochos, Nueves y Unos reaccionan desde un cimiento emocional de ira y tienen problemas con la apropiada concepción racional, es decir: el pensar claramente. Esta dificultad se describe a menudo como una condición de sueño mental.<br><br>\r\nLos Ochos sanos frecuentemente son dinámicos, fuertes e independientes. Demuestran la virtud del poder: cómo ejercer influencia para propósitos constructivos. Muchos Ochos son líderes naturales que inspiran a otros, protegen al débil y se esfuerzan por la justicia. Pueden usar su fuerza para sacar adelante las cosas y tienen el valor y la voluntad para poner en práctica y ejecutar nuevas ideas. Usualmente son honrados y directos, produciendo un enérgica y fresca satisfacción en cualquier cosa que realizan.<br><br>\r\n\r\nLos Ochos sanos frecuentemente son amigos leales y generosos que protegen aquello que es delicado y vulnerable en los demás. Ésta es, al mismo tiempo, una metáfora de cómo se relacionan consigo mismos. Debajo de su fuerte armadura externa se encuentra cobijada una parte de sí mismos más joven y vulnerable. Esta parte se encuentra relacionada con una inocencia de percepción que normalmente tienen los Ochos sanos. <br><br>Pueden ver el mundo como por primera vez, a través de los ojos de un niño. Podrían tener un amor relacionado a lo natural y espontáneo que es una fuente de espiritualidad y evoca esta calidad inocente. Los Ochos no acorazados muy a menudo exhiben la fuerza de la gentileza: son lo suficientemente fuertes como para ser amables, lo suficientemente abiertos para poder ser tocados, lo suficientemente seguros para poder estar equivocados y lo suficientemente ricos para poder ser generosos.<br><br>\r\nCuando los Ochos están menos sanos, su interés por el poder comienza a denigrar y a corromperse por los propios intereses. Dado que todavía se es relativamente libre de la auto-desconfianza, los Ochos empiezan a cubrir sus vulnerabilidades con agresivos despliegues de fuerza. Se sobre-identifican con ser fuertes como una forma de negar su lado tierno y sobrevivir en un mundo que consideran peligroso. También podrían tender a los excesos –quedándose despiertos hasta muy tarde, haciendo demasiadas cosas, manejando a excesiva velocidad, extraviándose de cierta forma en las adiciones para adormecer sus sentimientos más vulnerables.<br><br>\r\nLos Ochos enfermos disfrutan la confrontación e intentan hacer contacto con los demás principalmente a través de las disputas. Igualmente podrían presionar en contra de los demás para evaluar sus motivos y medir el grado de amenaza exterior. Los Ochos pueden narcisistamente inflar su presencia y parecer que ocupan mucho más espacio en un cuarto. Para proteger su parte tierna e infantil, pueden comportarse dominadores, arrogantes e insensibles. Bajo este caparazón intimidante, podrían sentirse sensibles a la traición, vulnerables al ridículo, o débiles de un cierto modo que los hace avergonzarse por ello.<br><br>\r\nLa mayoría de los Ochos no comprenden realmente cuán agresivos pueden parecer. Esto es debido a que niegan defensivamente la retroalimentación, especialmente acerca de la forma como pudieron haber herido a otros. Los Ochos enfermos pueden negar los sentimientos de culpa, usualmente cubriéndolos con más agresión, pretendiendo no tener nada de que disculparse. Dentro de su mente pueden ver a las personas como caricaturas, objetos bidimensionales que pueden entonces ser aplastarlos sin conciencia.<br><br>\r\nMuy similar a los Dos, la diferencia entre las expresiones sanas de este estilo en contraste con las enfermas es extraordinariamente enorme. Los Ochos muy enfermos pueden hacer mucho daño, principalmente a los demás al servicio de mantener su imagen grandiosa de ser invulnerables. <br><br>\r\nGobierna el comportamiento de los tipos Ochos una actitud del tipo: "pego primero antes de que me den a mí". Con esta idea, pueden ser recelosos, intimidadores, vengativos, crueles y psicópatas. <br><br>\r\nMuchos de los dictadores más sangrientos del mundo han sido Ochos muy enfermos, y sus brutales excesos reflejan como las personas enfermas con este estilo finalmente asesinan a su propia humanidad.', 1, 'Lujuria', 'Venganza', '"Yo Puedo"', 'Debilidad ', 'Sentirse Fuerte Y Salvador', 'Justicia', 'Actitud castigadora, rebeldía, dominación, insensibilidad, embaucamiento, cinismo, narcisismo, autonomía, predominio sensomotor, intimidación, afición al riesgo.', 5, 2, 'Territorialidad');
-INSERT INTO `Eneatipos` (`Id_Eneagrama`, `Nombre`, `Desc_Corta`, `Desc`, `Centro`, `Pasion`, `Fijacion`, `Vision`, `Temor`, `Deseo`, `Trampa`, `Descript`, `Est`, `Seg`, `Funcion`) VALUES
+INSERT INTO `eneatipos` (`Id_Eneagrama`, `Nombre`, `Desc_Corta`, `Desc`, `Centro`, `Pasion`, `Fijacion`, `Vision`, `Temor`, `Deseo`, `Trampa`, `Descript`, `Est`, `Seg`, `Funcion`) VALUES
 (9, 'El Pacificador', 'El tipo indolente, modesto, receptivo, tranquilizador, \r\nagradable y satisfecho.<br><br>\r\nPersonas que son receptivas a su ambiente y minimizan su propia presencia. Cuando sanos a menudo son afectuosos, modestos y confiados. En su estado más bajo pueden ser tercos, perezosos y muertos de alma.', 'A diferencia de los Ochos que expresan directamente su ira, los Nueves encierran y taponan su enojo por debajo. Su estrategia defensiva central es auto-borrarse, mezclarse con y adecuarse al ambiente. Esta táctica requiere que los Nueves supriman sus bordes ásperos y encubran cualquier parte de ellos que pudiera parecer desagradable. La mayoría de los Nueves resienten las consecuencias de esta estrategia: la gente los pasa por alto pero igualmente manifiestan su ira de forma indirecta.\r\nDado que la mayoría de los Nueves han adquirido la coloración de su ambiente, hay una variedad confusa de personas con este estilo. Pueden desempeñar una amplia gama de ocupaciones y exteriormente parecer muy diferentes uno de otro. Sin embargo, lo que comparten en el fondo es una distinta tendencia a dormirse a sus necesidades internas. <br><br>Cuando alguien está intentando identificar a un Nueve, lo que necesita buscar es la ausencia de algo en lugar de una calidad clara y definida que manifieste la persona.<br><br>\r\nLos Nueves a veces han sido descritos como las personas ordinarias del Eneagrama. En su estado más sano poseen una modestia personal profunda y una simplicidad elegante de pensamiento. Los Nueves sanos son uniformemente templados, estables, modestos, no-enjuiciadores y cómodos con quiénes son. A menudo tienen un punto de vista alegre como los Siete, pero viven en el presente y no el futuro.<br><br>\r\nMuchos Nueves tienen una energía tranquila enfocada sin ego que dirigen para producir cualquier cosa que sea importante para ellos. Este poder usualmente se encuentra arraigado en el amor independientemente de que piensen o no en él. La mayoría de las personas sanas con este estilo desean libremente servir a otros y administrar su mundo de modo que beneficie a aquéllos de quienes se preocupan.<br><br>\r\nLos Nueves son diplomáticos y mediadores naturales y pueden ser muy experimentados en la resolución de conflictos. Dado que buscan la paz, la unión y la armonía, generalmente les resulta sencillo encontrar puntos de acuerdo entre las partes en conflicto. De allí que un Nueve podría negociar pacientemente una empresa que se va construyendo en pequeños pasos positivos. <br><br>Los Nueves sanos son suavemente dinámicos, cubiertos con un sentido altamente integrado del sí mismo y de la misión implícita. La mayoría suelen ser flexibles y capaces de reformular entorpecidas y arduas verdades en caminos útiles que de alguna manera no generen nuevas defensivas.\r\nCuando no están tan sanos, los Nueves convierten la modestia en auto-ocultación. Comienzan a unirse ciegamente con los deseos de otros y desempeñar los papeles que su ambiente requiere.<br><br> En el proceso, borran sus propias necesidades, prioridades y ambiciones, ocultando sus opiniones y preferencias para mantener una aparente paz. La mayoría de los Nueves se ausenta de su propia vida, sin embargo, mientras más pasivos, se vuelven más desenfocados y ambivalentes.<br><br>\r\nLos Nueves menos sanos tienden a ver todos los lados de una situación e identificarse igualmente con cada perspectiva externa. Se enfocan en los detalles absurdos o inaplicables y pierden el panorama más amplio o, a menudo se olvidan del propósito original de una tarea.<br><br> Pueden ser externamente responsables pero con un bajo rendimiento, complicando obsesivamente tareas sencillas a la vez que reducen al mínimo las consecuencias de no conseguir que se hagan las cosas más importantes. El entrar en círculos los releva de la necesidad de tomar decisiones y elecciones personales, tomar la responsabilidad por tener un “yo” que piensan podría llegar a ser rechazado por otros.<br><br>\r\nLos Nueves tienen a menudo problemas para decir públicamente no, pero de todas formas lo expresarán, normalmente a través de la obstinación silenciosa y la agresión pasiva. Los Nueves normalmente culpan a otros, ya sea explícita o indirectamente, de la vida que sienten que no pueden realmente tener. Ahí, en el fondo, se encuentra la ira, un nihilismo comprimido en la mayoría de los Nueves enfermos. Han perdido el interés en su vida y no ven razón alguna para despertarse a sí mismos para jugar aquello que están convencidos es un juego vacío e infructuoso.<br><br>\r\nEs su estado más deteriorado, los Nueves puede hundirse en un depresivo auto-abandono y un tipo de olvido perezoso que es una imitación de la muerte. Pueden ser apáticos, limitados por el habito, callosos o entumecidos. Podrían hablar continuamente sobre lo que saben que deben hacer pero después nunca incomodarse para hacerlo. Podrían intentar evitar el conflicto pero accidentalmente provocarlo por estallidos de áspera disociación. Podrían ser desordenados, caóticos o entorpecidos y ofrecer retorcidas y malformadas razones para su irresponsabilidad.<br><br>\r\nLos Nueves profundamente enfermos puede hacer un gran daño a los demás a través del abandono, de la ruptura de compromisos y la conducta pasivo-agresiva a la vez que creen obstinadamente que sus acciones no tienen ninguna consecuencia. La adicción a las drogas y el alcohol pueden ser también problemas en esta etapa.', 1, 'Pereza, Acidia', 'Indolencia', '"Yo En Paz"', 'Conflicto', 'Sentirse En Paz', 'Tranquilidad', 'Inercia psicológica, sobreadaptación, resignación, generosidad, poco interés por sobresalir, descuido personal, propensión a hábitos robóticos, distracción, amistosa sociabilidad.', 6, 3, 'Homeostática');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Enea_Cor`
+-- Estructura de tabla para la tabla `enea_cor`
 --
 
-CREATE TABLE IF NOT EXISTS `Enea_Cor` (
+CREATE TABLE IF NOT EXISTS `enea_cor` (
   `Eneatipo` int(11) NOT NULL AUTO_INCREMENT,
   `Titulo` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `Desc` text COLLATE utf8_spanish2_ci NOT NULL,
@@ -118,10 +127,10 @@ CREATE TABLE IF NOT EXISTS `Enea_Cor` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=10 ;
 
 --
--- Volcar la base de datos para la tabla `Enea_Cor`
+-- Volcado de datos para la tabla `enea_cor`
 --
 
-INSERT INTO `Enea_Cor` (`Eneatipo`, `Titulo`, `Desc`, `Pregunta`, `Ventajas`, `Desventajas`) VALUES
+INSERT INTO `enea_cor` (`Eneatipo`, `Titulo`, `Desc`, `Pregunta`, `Ventajas`, `Desventajas`) VALUES
 (1, 'Perfeccionista', 'Soy muy exigente en lo que se refiere al comportamiento y considero responsabilidad mía y de los demás estar a la altura de mis exigencias. Me cuesta poco reparar en lo malo o lo incorrecto de una situación, así como en el modo de mejorar las cosas. Se me puede considerar exigente o crítico en exceso, pero no soporto que las cosas no se hagan bien. Me llena de satisfacción asumir responsabilidades, y poseo un sentido de la perfección refinado y estético. Cuando digo que voy a hacer algo, me aseguro de hacerlo bien. Si otra persona se comporta de forma injusta o irresponsable, me ofendo, aunque intento que no se note.', '¿Oigo en mi interior una voz o un mensaje que, como si fuera una grabación me critica continuamente por todo lo que hago mal?', 'Trabajador, Disciplinado', 'Enjuiciador, Inflexible'),
 (2, 'Altruista', 'Mi punto fuerte es la sensibilidad hacia las necesidades ajenas, a veces incluso hacia personas que no conozco. Es como si poseyera una antena invisible capaz de captar tales demandas, a menudo antes incluso de que los demás reparen en ellas. Me gusta considerarme una persona cálida, amigable y generosa. Las buenas relaciones son importantes para mí; me esfuerzo mucho en cultivarlas. A veces me cuesta no ayudar a los demás, incluso cuando la situación me sobrepasa o soy yo quien necesita ayuda. En esos momentos, puedo sentir que se me deja de lado o que mis esfuerzos no se valoran, y puedo dejarme llevar por la emoción o abrumar al otro.', '¿Sé por intuición lo que necesitan los demás pero me cuesta mucho expresar mis necesidades incluso para mis adentros?', 'Cariñoso, En sintonía con los sentimientos ajenos', 'Velado, Excesivamente acomodaticio'),
 (3, 'Triunfador', 'Me motiva el éxito, alcanzar mis objetivos, ser el mejor. En general, siempre me las he arreglado bien con cualquier meta que me he propuesto. Me siento muy identificado con el trabajo y pienso que el valor de una persona se basa fundamentalmente en lo que consigue. Como estoy tan ocupado, a menudo dejo a un lado los sentimientos o la introspección. Me siento frustrado cuando alguien me hace perder el tiempo, y también con las personas que no están a la altura de una tarea determinada. Aunque soy competitivo, también se me da bien trabajar en equipo (¡Aunque suelo estar yo al mando!).', '¿Hago lo que hago para que los demás me valoren y me respeten?', 'Seguro de sí mismo, Centrado en los resultados', 'Competitivo, Adicto al trabajo'),
@@ -135,10 +144,10 @@ INSERT INTO `Enea_Cor` (`Eneatipo`, `Titulo`, `Desc`, `Pregunta`, `Ventajas`, `D
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Experiencia`
+-- Estructura de tabla para la tabla `experiencia`
 --
 
-CREATE TABLE IF NOT EXISTS `Experiencia` (
+CREATE TABLE IF NOT EXISTS `experiencia` (
   `Id_Exp` int(11) NOT NULL AUTO_INCREMENT,
   `Id_Usu` int(11) NOT NULL,
   `No_Inst` int(11) NOT NULL,
@@ -151,11 +160,6 @@ CREATE TABLE IF NOT EXISTS `Experiencia` (
   `Ref` int(11) NOT NULL,
   PRIMARY KEY (`Id_Exp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ;
-
---
--- Volcar la base de datos para la tabla `Experiencia`
---
-
 
 -- --------------------------------------------------------
 
@@ -175,36 +179,77 @@ CREATE TABLE IF NOT EXISTS `gestalt` (
   `cofluencia` int(11) NOT NULL,
   `fijacion` int(11) NOT NULL,
   PRIMARY KEY (`id_gestalt`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
-
---
--- Volcar la base de datos para la tabla `gestalt`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Institucion`
+-- Estructura de tabla para la tabla `hsoc`
 --
 
-CREATE TABLE IF NOT EXISTS `Institucion` (
+CREATE TABLE IF NOT EXISTS `hsoc` (
+  `Id_Hsoc` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_Usu` int(11) NOT NULL,
+  `Aser` int(11) NOT NULL,
+  `Afro` int(11) NOT NULL,
+  `Expr` int(11) NOT NULL,
+  `Equi` int(11) NOT NULL,
+  `Flex` int(11) NOT NULL,
+  `Disc` int(11) NOT NULL,
+  `Empa` int(11) NOT NULL,
+  `Resp` int(11) NOT NULL,
+  `Comp` int(11) NOT NULL,
+  `Opti` int(11) NOT NULL,
+  PRIMARY KEY (`Id_Hsoc`),
+  UNIQUE KEY `Id_Usu` (`Id_Usu`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `institucion`
+--
+
+CREATE TABLE IF NOT EXISTS `institucion` (
   `Id_Inst` int(11) NOT NULL,
   `Nombre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+-- --------------------------------------------------------
+
 --
--- Volcar la base de datos para la tabla `Institucion`
+-- Estructura de tabla para la tabla `perhsoc`
 --
 
+CREATE TABLE IF NOT EXISTS `perhsoc` (
+  `Id_Per` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_His` int(11) NOT NULL,
+  `Nombre` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Valor` int(11) NOT NULL COMMENT '1 Asertividad / 2 Afrontamiendo / 3 Expresión / 4 Equipo / 5 Flexibilidad / 6 Disciplina / 7 Empatía / 8 Responsabilidad / 9 Compromiso / 10 Optimismo',
+  `P_Vista` text COLLATE utf8_spanish2_ci NOT NULL,
+  `Solucion` text COLLATE utf8_spanish2_ci NOT NULL,
+  `Silueta` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Imagen` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`Id_Per`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `perhsoc`
+--
+
+INSERT INTO `perhsoc` (`Id_Per`, `Id_His`, `Nombre`, `Valor`, `P_Vista`, `Solucion`, `Silueta`, `Imagen`) VALUES
+(1, 1, 'Raúl', 6, 'Raúl dice que el problema que sus demás compañeros tienen es no ser disciplinados, puesto que no establecen horarios específicos de trabajo para avanzar programadamente, por lo tanto, el tiempo les ganó y no llevan nada. ', 'Debe cada uno establecer adecuadamente sus tiempos de trabajo y controlar las distracciones que los han hecho atrasarse en la entrega del proyecto para ser más eficientes a futuro.', '', ''),
+(2, 1, 'María', 7, 'María, cree que el problema está en que todos trabajan únicamenteen lo suyo y no se ponen en los zapatos de los demás para entender no solo su trabajo, sino también las razones por las que se ha atrasado en las entregas cada uno; cree importante el mejorar la relación entre ellos para trabajar mejor.', 'Cada uno debe ponerse en los zapatos del otro y comprender cuál es el origen de la falta en el trabajo, para de esa forma solucionar los problemas a futuro, mejorando también su relación y trabajando más cordialmente.', '', ''),
+(3, 1, 'Alberto', 8, 'Alberto cree que no están siendo responsables ninguno de ellos, puesto que se estableció una fecha en conjunto para entregar los avances y al no haberlo hecho, nadie ha asumido la responsabilidad que le toca.', 'Debe asumir cada uno la responsabilidad de sus acciones y lo que esto implica, entendiendo que una fecha de entrega es un compromiso de uno mismo con el otro, evitando en un futuro que esto se repita.', '', ''),
+(4, 1, 'Felipe', 4, 'Felipe considera que el problema está en la comunicación en el equipo, pues nunca supieron ponerse de acuerdo tanto en qué y cuándo tenían que entregar, ni tampoco se hablaron para ayudarse mutuamente.', 'Deben tener una comunicación más efectiva que les permita recurrir al otro cuando tengan un problema en particular, con lo que, entre todos encuentren la solución al problema.', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Tarjetas`
+-- Estructura de tabla para la tabla `tarjetas`
 --
 
-CREATE TABLE IF NOT EXISTS `Tarjetas` (
+CREATE TABLE IF NOT EXISTS `tarjetas` (
   `ID_Tarjeta` int(11) NOT NULL AUTO_INCREMENT,
   `Palabra` varchar(60) COLLATE utf8_spanish2_ci NOT NULL,
   `Desc` text COLLATE utf8_spanish2_ci NOT NULL,
@@ -214,10 +259,10 @@ CREATE TABLE IF NOT EXISTS `Tarjetas` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=91 ;
 
 --
--- Volcar la base de datos para la tabla `Tarjetas`
+-- Volcado de datos para la tabla `tarjetas`
 --
 
-INSERT INTO `Tarjetas` (`ID_Tarjeta`, `Palabra`, `Desc`, `Color`, `Eneatipo`) VALUES
+INSERT INTO `tarjetas` (`ID_Tarjeta`, `Palabra`, `Desc`, `Color`, `Eneatipo`) VALUES
 (1, 'Consciente', 'Tiene un alto y activo sentido de lo que es bueno y malo, una "brújula personal" que guía sus acciones y opiniones en la mayor parte de las áreas de la vida. Tiene un profundo sentido de responsabilidad, sin hacer excepciones siquiera consigo mismo.', 1, 1),
 (2, 'Serio', 'Sobrio y firme en intención y acción, con un comportamiento que no es frívolo o fácilmente distraible. Lo opuesto de juguetón o caprichoso; cierta gravedad y seriedad sin mucha flexibilidad son parte de la escena.', 1, 1),
 (3, 'Obligado', 'Tiene un profundo sentido de que uno es responsable personalmente de hacer que las cosas se tornen de buena forma, de hacer lo correcto, y de perseverar en una dirección a pesar de los sentimientos personales o inclinaciones. Tiene el sentimiento de la responsabilidad de manera seria.', 1, 1),
@@ -312,10 +357,10 @@ INSERT INTO `Tarjetas` (`ID_Tarjeta`, `Palabra`, `Desc`, `Color`, `Eneatipo`) VA
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `Usuarios` (
+CREATE TABLE IF NOT EXISTS `usuarios` (
   `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(120) COLLATE utf8_spanish2_ci NOT NULL,
   `Ap_Mat` varchar(120) COLLATE utf8_spanish2_ci NOT NULL,
@@ -348,8 +393,12 @@ CREATE TABLE IF NOT EXISTS `Usuarios` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `Usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `Usuarios` (`Id_Usuario`, `Nombre`, `Ap_Mat`, `Ap_Pat`, `Fecha_Nac`, `Edad`, `Lu_Nac`, `Nac`, `Gen`, `Direccion`, `Tel_Casa`, `Cel`, `Correo`, `Pass`, `Con_1`, `Con_2`, `Con_3`, `Con_4`, `Con_5`, `Movil`, `Web`, `Co_Dig`, `Ult_Proy`, `Co_Ent`, `Po_Que`, `Activo`, `eneatipo`) VALUES
+INSERT INTO `usuarios` (`Id_Usuario`, `Nombre`, `Ap_Mat`, `Ap_Pat`, `Fecha_Nac`, `Edad`, `Lu_Nac`, `Nac`, `Gen`, `Direccion`, `Tel_Casa`, `Cel`, `Correo`, `Pass`, `Con_1`, `Con_2`, `Con_3`, `Con_4`, `Con_5`, `Movil`, `Web`, `Co_Dig`, `Ult_Proy`, `Co_Ent`, `Po_Que`, `Activo`, `eneatipo`) VALUES
 (1, 'Daniel', 'Hernandez', 'Torres', '1991-02-15', 22, 'Distrito Federal', 0, 0, 'Cerrada 30 norte', '2961409', '0442223278', 'pastor@gmail.com', '403926033d001b5279df37cbbe5287b7c7c267fa', 1, 1, 1, 1, 1, 1, 1, 1, 'NADA', 'NADA', 'NADA', 1, 1);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
