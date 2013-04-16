@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-03-2013 a las 00:47:18
+-- Tiempo de generación: 16-04-2013 a las 20:55:23
 -- Versión del servidor: 5.1.44
 -- Versión de PHP: 5.3.1
 
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `gestalt` (
   `cofluencia` int(11) NOT NULL,
   `fijacion` int(11) NOT NULL,
   PRIMARY KEY (`id_gestalt`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Volcar la base de datos para la tabla `gestalt`
