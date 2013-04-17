@@ -87,18 +87,38 @@ and open the template in the editor.
 
 							<h4>Cada integrante del equipo dice lo siguiente</h4>						
 
+							<div class="row personas">
+								<div id="persona1" class="four columns persona">
+									<img class="imgnormal" src="http://placehold.it/300x300/000">
+									<img class="hover" src="http://placehold.it/300/fff">
+								</div>
+								<div id="persona2" class="four columns persona">
+									<img class="imgnormal" src="http://placehold.it/300x300/000">
+									<img class="hover" src="http://placehold.it/300/fff">
+								</div>
+								<div id="persona3" class="four columns persona">
+									<img class="imgnormal" src="http://placehold.it/300x300/000">
+									<img class="hover" src="http://placehold.it/300/fff">
+								</div>
+							</div>
+
 							<div class="row">
-								<div class="four columns persona">
-									<img class="imgnormal" src="http://placehold.it/300x300/000">
-									<img class="hover" src="http://placehold.it/300/fff">
+								<div id="respuestapersona1" class="ten offset-by-one end columns respuesta">
+									<p>Maria1 opina que</p>
+									<p>voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum ex</p>
+									<a class="button">Estoy de acuerdo con esta solucion</a>
 								</div>
-								<div class="four columns persona">
-									<img class="imgnormal" src="http://placehold.it/300x300/000">
-									<img class="hover" src="http://placehold.it/300/fff">
+
+								<div id="respuestapersona2" class="ten offset-by-one end columns respuesta">
+									<p>Maria2 opina que</p>
+									<p>voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum ex</p>
+									<a class="button">Estoy de acuerdo con esta solucion</a>
 								</div>
-								<div class="four columns persona">
-									<img class="imgnormal" src="http://placehold.it/300x300/000">
-									<img class="hover" src="http://placehold.it/300/fff">
+
+								<div id="respuestapersona3" class="ten offset-by-one end columns respuesta">
+									<p>Maria3 opina que</p>
+									<p>voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum ex</p>
+									<a class="button">Estoy de acuerdo con esta solucion</a>
 								</div>
 							</div>
 
@@ -111,6 +131,16 @@ and open the template in the editor.
 		<!--/#outer-wrap-->
 
 		<script src="<?= base_url() ?>media/js/main.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".persona").click(function(){
+					$(".respuesta").removeClass("show")
+					var id = "respuesta" + $(this).attr("id")
+					id = "#"+ id + ""
+					$(id).addClass('show')
+				})
+			})
+		</script>
 
 </body>
 </html>
