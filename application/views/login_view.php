@@ -22,7 +22,7 @@ $this->load->view("header");
                 <div class="container">
                     <div class="row">
                         <div class="six centered columns">
-                            <?php echo form_open('academia/login'); ?>  
+							<?php echo form_open('academia/login'); ?>  
                             <fieldset>
                                 <legend>Inicia Sesión</legend>
                                 <label for="error">Correo electrónico:</label>
@@ -33,7 +33,7 @@ $this->load->view("header");
                                 <small id="errorp" style="color:red"><?php echo form_error('pass'); ?></small>
                                 <input type="submit" class="button secondary radius" value="Iniciar Sesión">
                             </fieldset>
-                            <? echo form_close(); ?>
+							<? echo form_close(); ?>
                         </div>
                     </div>
                 </div>

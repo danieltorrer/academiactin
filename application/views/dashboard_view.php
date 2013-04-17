@@ -133,7 +133,7 @@ $this->load->view("header");
 
                                 <div class="mosaic-block cover four columns">
                                     <div class="mosaic-overlay"><img src="<?= base_url() ?>media/img/gestalt.png"/></div>
-                                    <a href="<?=base_url()?>gestalt" target="_self" class="mosaic-backdrop">
+                                    <a href="<?= base_url() ?>gestalt" target="_self" class="mosaic-backdrop">
                                         <div class="details">
                                             <h4>Prueba Gestalt</h4>
                                         </div>
@@ -168,7 +168,16 @@ $this->load->view("header");
                                             <h4>Base de Conocimientos</h4>
                                         </div>
                                     </a>
-                                </div>	
+                                </div>
+
+								<div class="mosaic-block cover four columns end">
+                                    <div class="mosaic-overlay"><img src="<?= base_url() ?>media/img/conocimientos.png"/></div>
+                                    <a href="<?= base_url() ?>habilidades" target="_self" class="mosaic-backdrop">
+                                        <div class="details">
+                                            <h4>Habilidades sociales</h4>
+                                        </div>
+                                    </a>
+                                </div>
 
                             </div>
                         </div>
