@@ -14,7 +14,9 @@
 	position: relative;
 	height: 350px;
 }
-
+.persona{
+	min-height: 350px;
+}
 .persona img{
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;

@@ -75,33 +75,30 @@ $this->load->view("header");
                 <div id="main" role="main">
 					<div class="row">
 						<div class="twelve columns">
-							<h3>Hisotiras</h3>
-							<h5>Contesta los siguientes bla bla bla</h5>
+							<h3>Casos</h3>
+							<h5>Contesta los siguientes casos</h5>
 						</div>
+                        <?php 
+                        $i=1;
+                        $aux=0;
+                        while ($i<=$historias):
+                            if($i==$historias-1&&$aux==0||$i==$historias-2&&$aux==0||$i==$historias&&$aux==0):?>
+                                <div class="four columns end">
+                            <?php
+                            elseif($aux==0):?>
+                            <div class="four columns">
+                            <?php endif;?>
+                                <a href="<?= base_url()?>habilidades/Caso/<?=$i?>">Caso <?=$i?></a><br>
 
-						<div class="four columns">
-							<ul>
-								<li><a href="habilidades/caso/1">Historia</a></li>
-								<li><a href="habilidades/caso/2">Historia</a></li>
-								<li><a href="habilidades/caso/3">Historia</a></li>
-							</ul>
-						</div>
-
-						<div class="four columns">
-							<ul>
-								<li><a href="habilidades/caso/4">Historia</a></li>
-								<li><a href="habilidades/caso/5">Historia</a></li>
-								<li><a href="habilidades/caso/6">Historia</a></li>
-							</ul>
-						</div>
-
-						<div class="four columns">
-							<ul>
-								<li><a href="habilidades/caso/7">Historia</a></li>
-								<li><a href="habilidades/caso/8">Historia</a></li>
-								<li><a href="habilidades/caso/9">Historia</a></li>
-							</ul>
-						</div>
+                        <?php   $i++;
+                                $aux++;
+                                if($aux==3):?>
+                                <br>
+                            </div>
+                            <?php
+                                    $aux=0;
+                                endif;
+                        endwhile;?>
 					</div>
                 </div>
             </div>

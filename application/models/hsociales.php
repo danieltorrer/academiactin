@@ -13,20 +13,28 @@ class HSociales extends CI_Model {
 		return $data;
 	}
 
+	public function Obt_Casos() {
+		$data =  $this->db->count_all_results("casohsoc");
+		return $data;
+	}
+
+
 	public function Obt_Pers($id_caso) {
 		$aux = 0;
-		$res = mysql_query("Select * from Tarjetas");
+		$res = mysql_query("Select * from Perhsoc Where Id_His=".$id_caso);
+		$query=$this->db->where("Id_His",$id_caso);
+
 		while ($fila = mysql_fetch_array($res)) {
 			$aux++;
 			$personajes[$aux]['Id_Per'] = $fila['Id_Per'];
 			$personajes[$aux]['Nombre'] = $fila['Nombre'];
 			$personajes[$aux]['Valor'] = $fila['Valor'];
-			$personajes[$aux]['P_vista'] = $fila['P_Vista'];
+			$personajes[$aux]['P_Vista'] = $fila['P_Vista'];
 			$personajes[$aux]['Solucion'] = $fila['Solucion'];
 			$personajes[$aux]['Silueta'] = $fila['Silueta'];
 			$personajes[$aux]['Imagen'] = $fila['Imagen'];
 		}
-		return $data;
+		return $personajes;
 	}
 
 }

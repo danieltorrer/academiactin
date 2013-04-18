@@ -81,49 +81,48 @@ and open the template in the editor.
                     <div class="container">
                         <div class="row">
 							<div class="twelve columns historia">
-								<p>Lee atentamente los casos y elige la bla bla<p>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+								<p>Lee atentamente el caso y elige la respuesta que te parezca más adecuada.<p>
+								<p><?=$historia["ihist"]?></p>
 							</div>
 
-							<h4>Cada integrante del equipo dice lo siguiente</h4>						
+							<h4>Cada integrante del equipo dice lo siguiente</h4>			
 
-							<div class="row personas">
-								<div id="persona1" class="four columns persona">
-									<img class="imgnormal" src="http://placehold.it/300x300/000">
-									<img class="hover" src="http://placehold.it/300/fff">
-								</div>
-								<div id="persona2" class="four columns persona">
-									<img class="imgnormal" src="http://placehold.it/300x300/000">
-									<img class="hover" src="http://placehold.it/300/fff">
-								</div>
-								<div id="persona3" class="four columns persona">
-									<img class="imgnormal" src="http://placehold.it/300x300/000">
-									<img class="hover" src="http://placehold.it/300/fff">
-								</div>
-							</div>
+<div class="row personas">
+                        <?php 
+                        $limite=count($personajes);
+                        $i=1;
+                        while ($i<=$limite){
+                            if($i==$limite):?>
+                                <div class="three columns persona end" id="persona<?=$i?>">
+                            <?php
+                            else:?>
+                            	<div class="three columns persona" id="persona<?=$i?>">
+                            <?php
+                            endif;?>
+									<img class="imgnormal" src="http://placehold.it/200/000">
+									<img class="hover" src="http://placehold.it/200/">
+                            	</div>
+                            <?php
+                            $i++;
+                        	}?>			
+</div>
 
 							<div class="row">
-								<div id="respuestapersona1" class="ten offset-by-one end columns respuesta">
-									<p>Maria1 opina que</p>
-									<p>voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum ex</p>
-									<a class="button">Estoy de acuerdo con esta solucion</a>
+                        <?php 
+                        $limite=count($personajes);
+                        $i=1;
+                        while ($i<=$limite):?>
+								<div id="respuestapersona<?=$i?>" class="ten offset-by-one end columns respuesta">
+									<p><?=$personajes[$i]['P_Vista']?></p>
+									<a class="button">Estoy de acuerdo con este punto de vista.</a>
 								</div>
-
-								<div id="respuestapersona2" class="ten offset-by-one end columns respuesta">
-									<p>Maria2 opina que</p>
-									<p>voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum ex</p>
-									<a class="button">Estoy de acuerdo con esta solucion</a>
-								</div>
-
-								<div id="respuestapersona3" class="ten offset-by-one end columns respuesta">
-									<p>Maria3 opina que</p>
-									<p>voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum ex</p>
-									<a class="button">Estoy de acuerdo con esta solucion</a>
-								</div>
-							</div>
+								<?php
+							$i++;
+						endwhile;
+								?>
 
 						</div>
-					</div>
+					</div>	
 				</div>
 			</div>
 			<!--/#inner-wrap-->
