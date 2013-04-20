@@ -1,58 +1,38 @@
 .historia{
-	margin-top: 50px;
+    margin-top: 50px;
 }
 
 .historia p:first-child{
-	font-weight: bold;	
+    font-weight: bold;	
 }
 
 .opciones div div{
-	display: inline-block;
+    display: inline-block;
 }
 
-.personas{
-	position: relative;
-	height: 350px;
-}
-.persona{
-	min-height: 350px;
-}
-.persona img{
-	-webkit-transition: all .5s ease;
-	-moz-transition: all .5s ease;
-	-ms-transition: all .5s ease;
-	-o-transition: all .5s ease;
-	transition: all .5s ease;
-	position: absolute;
+#soluciones{
+    margin-top: 20px;
 }
 
-.persona > img:nth-child(1){ 
-    filter: alpha(opacity=100); /* IE stuff */
-    opacity: 1;
-    z-index: 2;
-}
-.persona > img:nth-child(2){ /* second <img> child of <div> */
-    filter: alpha(opacity=0); /* IE stuff */
-    opacity: 0;
-    z-index: 1;
-}
-/* hover */
-.persona:hover > img:nth-child(1){ 
-    filter: alpha(opacity=0);
-    opacity: 0;
-    z-index: 1;
-}
-.persona:hover > img:nth-child(2){ 
-    filter: alpha(opacity=100);
-    opacity: 1;
-    z-index: 2;
+.persona p{
+    text-align: justify;
 }
 
-.respuesta{
-	margin: 10px;
-	display: none;
+.hide{
+    display: none;
 }
 
 .show{
-	display: block !important;
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+.solucion p{
+    display: inline-block;
+}
+
+#respuestabtn{
+    margin-top: 10px !important;
 }
