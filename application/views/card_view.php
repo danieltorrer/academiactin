@@ -136,13 +136,7 @@ $this->load->view("header");
 
             <!--Footer -->
             <footer role="contentinfo">
-                <!--<div class="block container">
-                    <div class="row">
-                        <div class="twelve columns">
-                            <p class="small">Copyright © <a href="http://dbushell.com/">David Bushell</a></p>
-                        </div>
-                    </div>
-                </div>-->
+               
             </footer>
 
         </div>

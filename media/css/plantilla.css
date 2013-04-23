@@ -206,11 +206,11 @@ body {
 #main {
     background: #fff;
     margin-bottom: 40px;
-   
+
 }
 
 .margen{
-     margin-top: 40px;
+    margin-top: 40px;
 }
 
 #main .block {
@@ -450,6 +450,9 @@ ul.baraja-cont {
     float: left;
     text-align: center;
     padding-top: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;  
 }
 
 .cartita h4 {
