@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-04-2013 a las 02:07:27
--- Versión del servidor: 5.5.27
--- Versión de PHP: 5.4.7
+-- Servidor: localhost
+-- Tiempo de generación: 23-04-2013 a las 13:16:44
+-- Versión del servidor: 5.1.44
+-- Versión de PHP: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -33,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `casohsoc` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Volcado de datos para la tabla `casohsoc`
+-- Volcar la base de datos para la tabla `casohsoc`
 --
 
 INSERT INTO `casohsoc` (`Id_Caso`, `Historia`) VALUES
@@ -53,6 +52,11 @@ CREATE TABLE IF NOT EXISTS `conocimientos` (
   PRIMARY KEY (`Id_Con`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ;
 
+--
+-- Volcar la base de datos para la tabla `conocimientos`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -70,6 +74,11 @@ CREATE TABLE IF NOT EXISTS `educacion` (
   `Titulo` varchar(120) COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`Id_Edu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `educacion`
+--
+
 
 -- --------------------------------------------------------
 
@@ -97,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `eneatipos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=10 ;
 
 --
--- Volcado de datos para la tabla `eneatipos`
+-- Volcar la base de datos para la tabla `eneatipos`
 --
 
 INSERT INTO `eneatipos` (`Id_Eneagrama`, `Nombre`, `Desc_Corta`, `Desc`, `Centro`, `Pasion`, `Fijacion`, `Vision`, `Temor`, `Deseo`, `Trampa`, `Descript`, `Est`, `Seg`, `Funcion`) VALUES
@@ -129,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `enea_cor` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=10 ;
 
 --
--- Volcado de datos para la tabla `enea_cor`
+-- Volcar la base de datos para la tabla `enea_cor`
 --
 
 INSERT INTO `enea_cor` (`Eneatipo`, `Titulo`, `Desc`, `Pregunta`, `Ventajas`, `Desventajas`) VALUES
@@ -163,6 +172,11 @@ CREATE TABLE IF NOT EXISTS `experiencia` (
   PRIMARY KEY (`Id_Exp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ;
 
+--
+-- Volcar la base de datos para la tabla `experiencia`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -182,6 +196,11 @@ CREATE TABLE IF NOT EXISTS `gestalt` (
   `fijacion` int(11) NOT NULL,
   PRIMARY KEY (`id_gestalt`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Volcar la base de datos para la tabla `gestalt`
+--
+
 
 -- --------------------------------------------------------
 
@@ -206,6 +225,11 @@ CREATE TABLE IF NOT EXISTS `hsoc` (
   UNIQUE KEY `Id_Usu` (`Id_Usu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Volcar la base de datos para la tabla `hsoc`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -216,6 +240,11 @@ CREATE TABLE IF NOT EXISTS `institucion` (
   `Id_Inst` int(11) NOT NULL,
   `Nombre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcar la base de datos para la tabla `institucion`
+--
+
 
 -- --------------------------------------------------------
 
@@ -236,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `perhsoc` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=9 ;
 
 --
--- Volcado de datos para la tabla `perhsoc`
+-- Volcar la base de datos para la tabla `perhsoc`
 --
 
 INSERT INTO `perhsoc` (`Id_Per`, `Id_His`, `Nombre`, `Valor`, `P_Vista`, `Solucion`, `Silueta`, `Imagen`) VALUES
@@ -265,7 +294,7 @@ CREATE TABLE IF NOT EXISTS `tarjetas` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=91 ;
 
 --
--- Volcado de datos para la tabla `tarjetas`
+-- Volcar la base de datos para la tabla `tarjetas`
 --
 
 INSERT INTO `tarjetas` (`ID_Tarjeta`, `Palabra`, `Desc`, `Color`, `Eneatipo`) VALUES
@@ -399,12 +428,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Volcar la base de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`Id_Usuario`, `Nombre`, `Ap_Mat`, `Ap_Pat`, `Fecha_Nac`, `Edad`, `Lu_Nac`, `Nac`, `Gen`, `Direccion`, `Tel_Casa`, `Cel`, `Correo`, `Pass`, `Con_1`, `Con_2`, `Con_3`, `Con_4`, `Con_5`, `Movil`, `Web`, `Co_Dig`, `Ult_Proy`, `Co_Ent`, `Po_Que`, `Activo`, `eneatipo`) VALUES
 (1, 'Daniel', 'Hernandez', 'Torres', '1991-02-15', 22, 'Distrito Federal', 0, 0, 'Cerrada 30 norte', '2961409', '0442223278', 'pastor@gmail.com', '403926033d001b5279df37cbbe5287b7c7c267fa', 1, 1, 1, 1, 1, 1, 1, 1, 'NADA', 'NADA', 'NADA', 1, 1);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

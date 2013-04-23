@@ -64,7 +64,7 @@ $this->load->view("header");
 
                         <?php
                         //
-                        //var_dump($resultado);
+                        var_dump($resultado);
                         for ($i = 0; $i < count($resultado); $i++) {
 
                             if ($i % 4 == 0) {
