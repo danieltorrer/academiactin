@@ -109,7 +109,7 @@ $this->load->view("header");
                         <div class="row">
                             <div class="twelve columns">
                                 <div id="drop">
-                                    <img id="paloma" src="<?= base_url() ?>media/img/paloma.jpg">
+                                    <a id="paloma" class="button small">Continuar</a>
                                 </div>
                             </div>
                         </div>
@@ -125,18 +125,12 @@ $this->load->view("header");
                 </div>
             </div>
 
-
             <!-- Modal -->
-            <div id="instruccmodal" class="reveal-modal">
-                <h2>Awesome. I have it.</h2>
-                <p class="lead">Your couch.  It is mine.</p>
-                <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-                <a class="close-reveal-modal">&#215;</a>
-            </div>
+
 
             <!--Footer -->
             <footer role="contentinfo">
-               
+
             </footer>
 
         </div>

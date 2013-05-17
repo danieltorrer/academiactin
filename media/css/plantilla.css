@@ -461,11 +461,14 @@ ul.baraja-cont {
 }
 
 #paloma{
-    height: 50px;
-    width: 60px;
     position: absolute;
-    left: 90%;
+    left: 89.5%;
+    bottom: 4%;
     z-index: 999;
+}
+
+#paloma:hover{
+    cursor: pointer;
 }
 
 .bar{
@@ -492,29 +495,7 @@ ul.baraja-cont {
 .p input{
     margin-right: 5px;
 }
-/*#papelera{
-    position: absolute;
-    top: 100%;
-    left: 100%;
-    margin-top: -120px;
-    margin-left: -170px;
-    width: 100px;
-    height: 100px;
-}*/
 
-/*#drop2{
-    position: absolute;
-    border: solid;
-    width: 100px;
-    height: 100px;
-    top: 100%;
-    left: 100%;
-    margin-top: -120px;
-    margin-left: -170px;
+#aceptar-btn{
+    
 }
-
-#drop1{
-    border: solid;
-    width: 85%;
-    height: 100%;
-}*/

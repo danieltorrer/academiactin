@@ -125,11 +125,11 @@ class Academia extends CI_Controller {
         $nombresarray = explode(",", $nombres);
         $idcartasarray = explode(",", $idcartas);
 
-        $numeros = array();
+        $numeros = array(); //eneatipos disponibles 
         for ($i = 1; $i < 10; $i++) {
             $numeros[$i] = substr_count($eneatipos, $i);
         }
-
+        
         //obtener eneatipo con mas ocurrencias (mayor)
 
         $mayor = 0;
@@ -155,23 +155,15 @@ class Academia extends CI_Controller {
 
         //hay $cont repetidos
         if (count($mayores) > 1) {
-            $sustituir = array(); //se guardaran las cartas
-            $cuenta = 0;
-
-            //obtener las eneatipos, ids y nombres de los numeros que tienen mas
-            for ($i = 1; $i < 10; $i++) {
-                for ($j = 0; $j < $cont; $j++) {
-                    if ($eneatiposarray[$i] == $mayores[$j]) {
-                        $sustituir[$cuenta]["numero"] = $eneatiposarray[$i];
-                        $sustituir[$cuenta]["nombre"] = $nombresarray[$i];
-                        $sustituir[$cuenta]["id"] = $idcartasarray[$i];
-                        $cuenta++;
-                    }
-                }
-            }
-            $datos = array("resultado" => $sustituir);
-            $this->load->view("borrarcartas_view.php", $datos);
-        } else {
+            
+            //sacar de la base de datos los relatos de los eneatipos
+            //insertarlos en la view
+            
+            
+            $this->load->view("borrarcartas_view.php");
+        } 
+        
+        else {
             //insertar numero de eneagrama a usuario
             $this->usuarios->seteneatipo($eneatipo);
             redirect("academia/mostrareneatipo");

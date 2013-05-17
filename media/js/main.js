@@ -160,9 +160,6 @@
         $(window).resize(tamano)
     //})
 
-    
-
-    
 
 })(window, window.document);
 

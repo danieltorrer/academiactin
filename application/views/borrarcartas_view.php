@@ -85,6 +85,9 @@ $this->load->view("header");
                             }
                         }
                         ?>
+                        <div>
+                            <a id="aceptar-btn" class="button">Aceptar</a>
+                        </div>
                         <img id="paloma" src="<?= base_url() ?>media/img/paloma.jpg" style="display:none">
                     </div>
                 </div>
@@ -123,7 +126,7 @@ $this->load->view("header");
             });
             alert(nombres);
             alert(ids);
-            //$("#borrarform").submit();
+            
         });
     });
 </script>

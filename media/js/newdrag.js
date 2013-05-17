@@ -147,8 +147,6 @@ $(function() {
         $("#enenombres").val(nombres)
         $("#eneid").val(id_enea)
         $("#eneagramaform").submit();
-        
-        
     });
 
 
